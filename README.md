@@ -15,6 +15,9 @@ Demostraciones, consejos y buenas prácticas siguiendo un caso de 0 a 100, que a
 
 ## Webcast www.sqlpass.es - Power BI de 0 a 100
 Blog + Video
+
 [Materiales] (https://github.com/rpertusalopez/sessions/tree/master/Webcast%20Power%20BI%20de%200%20a%20100) 
+
 [Dashboard final](https://app.powerbi.com/view?r=eyJrIjoiOGZhZWY0Y2EtYmJmZC00OGU0LWI5YzUtZDdjZDZjNTUxZDcxIiwidCI6ImNhYTQxZjRlLWI2ZDktNDc2MC05OTA0LWFmM2M2Y2M0YjQ1YyIsImMiOjh9)
+
 Durante este webcast repasaremos todas las novedades que han aparecido en los últimos meses en la plataforma PowerBI y cómo las podemos aplicar con éxito a nuestros escenarios de Data Visualization, Streaming, Big Data y Analytics. Demostraciones, consejos y buenas prácticas lleno de casos prácticos.
