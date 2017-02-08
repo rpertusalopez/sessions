@@ -1,9 +1,10 @@
 # Sesiones
 
 Materiales
+*Todos los datos utilizados en las demostraciones son de carácter educativo. Está terminantemente prohibido el uso comercial de los mismos.
 
 ## Microsoft TechSummit 2016 - Power BI y Cortana Analytics de 0 a 100
-[Blog + Video](https://www.google.com)
+[Blog + Video](http://www.rpertusa.com)
 
 [Materiales](https://github.com/rpertusalopez/sessions/tree/master/Microsoft%20TechSum%202016%20-%20PowerBI%20y%20Cortana%20Analytics%20de%200%20a%20100)
 
@@ -14,7 +15,7 @@ Durante esta sesión compartiremos experiencias reales en entornos de Data Visua
 Demostraciones, consejos y buenas prácticas siguiendo un caso de 0 a 100, que además, nos ayudará a ganar el próximo Comunio 2016.
 
 ## Webcast www.sqlpass.es - Power BI de 0 a 100
-Blog + Video
+[Blog paso a paso + Video] (http://www.rpertusa.com)
 
 [Materiales] (https://github.com/rpertusalopez/sessions/tree/master/Webcast%20Power%20BI%20de%200%20a%20100) 
 
