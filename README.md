@@ -1,7 +1,8 @@
 # Sesiones
 
-Materiales
-*Todos los datos utilizados en las demostraciones son de carácter educativo. Está terminantemente prohibido el uso comercial de los mismos.
+Recopilación de mis sesiones, junto con materiales, videos y ppts. Más detalles en mi blog [rpertusa.com](http://www.rpertusa.com)
+
+*Todos los datos utilizados en las demostraciones son de carácter educativo. Está terminantemente prohibido el uso comercial de los mismos.*
 
 ## Microsoft TechSummit 2016 - Power BI y Cortana Analytics de 0 a 100
 [Blog + Video](http://www.rpertusa.com)
