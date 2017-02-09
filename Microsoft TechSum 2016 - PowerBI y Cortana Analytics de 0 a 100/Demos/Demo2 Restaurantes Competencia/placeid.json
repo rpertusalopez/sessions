@@ -1,0 +1,233 @@
+{
+   "html_attributions" : [],
+   "result" : {
+      "address_components" : [
+         {
+            "long_name" : "2",
+            "short_name" : "2",
+            "types" : [ "street_number" ]
+         },
+         {
+            "long_name" : "Calle de San Sebastián",
+            "short_name" : "Calle de San Sebastián",
+            "types" : [ "route" ]
+         },
+         {
+            "long_name" : "Madrid",
+            "short_name" : "Madrid",
+            "types" : [ "locality", "political" ]
+         },
+         {
+            "long_name" : "Madrid",
+            "short_name" : "M",
+            "types" : [ "administrative_area_level_2", "political" ]
+         },
+         {
+            "long_name" : "Comunidad de Madrid",
+            "short_name" : "Comunidad de Madrid",
+            "types" : [ "administrative_area_level_1", "political" ]
+         },
+         {
+            "long_name" : "Spain",
+            "short_name" : "ES",
+            "types" : [ "country", "political" ]
+         },
+         {
+            "long_name" : "28012",
+            "short_name" : "28012",
+            "types" : [ "postal_code" ]
+         }
+      ],
+      "adr_address" : "\u003cspan class=\"street-address\"\u003eCalle de San Sebastián, 2\u003c/span\u003e, \u003cspan class=\"postal-code\"\u003e28012\u003c/span\u003e \u003cspan class=\"locality\"\u003eMadrid\u003c/span\u003e, \u003cspan class=\"country-name\"\u003eSpain\u003c/span\u003e",
+      "formatted_address" : "Calle de San Sebastián, 2, 28012 Madrid, Spain",
+      "formatted_phone_number" : "913 89 64 90",
+      "geometry" : {
+         "location" : {
+            "lat" : 40.41386709999999,
+            "lng" : -3.7016075
+         },
+         "viewport" : {
+            "northeast" : {
+               "lat" : 40.41387804999998,
+               "lng" : -3.701527700000002
+            },
+            "southwest" : {
+               "lat" : 40.41383425000001,
+               "lng" : -3.7016833
+            }
+         }
+      },
+      "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+      "id" : "ab8ebbcb0d2984d32896a933eadc884d00946579",
+      "international_phone_number" : "+34 913 89 64 90",
+      "name" : "Hotel NH Collection Madrid Palacio de Tepa",
+      "photos" : [
+         {
+            "height" : 994,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113560213179941737539/photos\"\u003eM Vargas\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAHI7axxM_vbnbfkBeaGijJbM4pMsuqZ7Zjp2YAlkvk0D1E-DGc_5X3ASMIXQrKUZvap_0YCddibcOXWO7896rdQBsh9wpv4KIWSeKbvTHLKQiJh2lMVN7qOtSrm5Cz4ktsfdrcWJtzR-OHskKvNmIiOtK2vJm3BgSFWeMdxeKnUjEhC24HSbivpvvuG0ca8zPG2XGhQu824VGcy_7qjXS8nU7qec_KiHLA",
+            "width" : 1283
+         },
+         {
+            "height" : 1197,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118267205191565013523/photos\"\u003eHotel NH Collection Madrid Palacio de Tepa\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAFrfRHjhAFkKufBEG7PfITDH_vT9vFApyUpThF_7qUPlkhl4Y_aaRNEDFLzCDER_QNTDCONW3h46Bs7VrXl3VZYvda3_okLDCQsIlkSUx0SMOxiQP4i2QQI7_JhaqHQy54XuaDL0Qiy2z3XuAhfIheih7XKs3u7lOwMn_ynk2GE9EhBetgHnY5Nz5ua2FhUYMPPzGhTU435CYUOgj2dP5y_sfSzUO0KnoA",
+            "width" : 1813
+         },
+         {
+            "height" : 1223,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118267205191565013523/photos\"\u003eHotel NH Collection Madrid Palacio de Tepa\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAADqW-rhOVdWq3Yi7tgwClGQ1mQ__wwJeO3fCv4zaUQR6XrX1-1HlWqR_qFhxpVIFoYepkWFsezLgLbp4T8JQz56c25RPshNjm9HmCi1YMQrlsuibGiuUU1TYdyz9Wui2AJtBtI0QRsqIlAtEn9znK3oYYVKF1z-m5CMfyyHrDM5OEhBjympY0xPgkodnYOCXaVY-GhTUZUhsEBfEht79rphMBYefctZH8w",
+            "width" : 1160
+         },
+         {
+            "height" : 1004,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118267205191565013523/photos\"\u003eHotel NH Collection Madrid Palacio de Tepa\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAADabK81xA7_BY_AiXzBJVdHZi60NtumwTG-7azI01qqthZBUehl6PGCU2M9K5_ylToKv85am6bfyzeNGnPTKnAl-4AD99QnnNDiIodcriggfaLCJflCJ3wtBgkgB9qN7t82tJN1yQn3Jbq_ST5xnyPudjmIfB1sX5yUyasNFjdJEEhCvX2oS0s6kkZJycx3V-6SAGhT8NE1-jE0cOgePXahfaTYkxFdA3w",
+            "width" : 1504
+         },
+         {
+            "height" : 1228,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118267205191565013523/photos\"\u003eHotel NH Collection Madrid Palacio de Tepa\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAHHMZ4FH65aON4eHDbCH2Yv1odIOkBK2nwEDynlASzPjB0zxMwcDbJ5Om0yy6BQVHfQq5noAM7BG-1jUWPDK-sOg0VAW2jUnbOvPIxO8J7caFxmuD-fmoz43GU6doDHxwEuplcP_qBSVv4kXabhZQapGZQyaYRJ_XtJCN_ze1HqrEhCgZPHqeq-10nIzPmcXogc4GhR7OgcbG5JvtG4LENRRrafFD6Xi6A",
+            "width" : 1697
+         },
+         {
+            "height" : 1004,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118267205191565013523/photos\"\u003eHotel NH Collection Madrid Palacio de Tepa\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAANAeuOpnImskJR9b_hoE2kBGys2rjGOBCcqZBjO1NLG-eUQOY5KPZdqUlXGadZmNHVHYei1qgGooHxmxL-_W4hCdmvrsekgEUAif1ubzhuq-AKwld6ys9Oq3nrpGHlWpOIpLlaPxC2a3C8odi23KXWP17eyEK-funOzaiwpvHmbQEhAFjvMN2YZMC4cWSeRaeZWTGhSFJyDq-XNoj9xn7HSYNY7GXw5KIw",
+            "width" : 1504
+         },
+         {
+            "height" : 1004,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118267205191565013523/photos\"\u003eHotel NH Collection Madrid Palacio de Tepa\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAEU-mnKklzuq49PJuaCO-rrtvfyl84LkxBMkknCEnfpa35JP-4Y-IvjJ9pdqrbyyVy_yRzXi3deypcjjEQONbyyGiD6_qKeNVtmjfruXvPNxTeSWoedUNSXbk1NZOlAGjKSa4EuoVbYGG5LXzwjd3Tk4gtB8lTQluzpYHinnITTdEhA4DMfd_AOcNc4uSoXokm7AGhRf_24DcR9TDO-3zCAWm1ZE92Vhtg",
+            "width" : 1504
+         },
+         {
+            "height" : 1199,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118267205191565013523/photos\"\u003eHotel NH Collection Madrid Palacio de Tepa\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAIuRMmIiVM_e6v2it4SI0XbEylhlLmgwaupRPrwJcGH0qUw0nI3-MsnLp1-FTQNvxTJ9_NF8WX1CjFsIkfkxdlfwKuraH-vDC5EeArgXErhGeXhNX4_TsjtJY6AR6c82g6cHTKNxgQpUkOT-4FFn5tJ5WcnU7_e1Ym2AYR437FK5EhDlPFMLtWgaGeG0etzJR5llGhTPn4vlOWpJ2FS-taQgKKkkpcBBrw",
+            "width" : 1786
+         },
+         {
+            "height" : 1004,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118267205191565013523/photos\"\u003eHotel NH Collection Madrid Palacio de Tepa\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAExjdvuXvYFrjghT7DnIAe8G6NjhX1AGvMOaWyDenpEI-t8QqAw2iXT3IPpa_5ew5KTbmAAGgOJ3MhNuMBx6wnxFJCyGUBs2IZEImbkIudCaUyWM_JQI7YwzNWdMGp5JT5-REQIiyu99uPxZEBl8Pqh2HfcuZFPt25PXY8TwhzwVEhAeSRSob2UgeaAYNa4Sh2gIGhTjbp_9Z6_hCxmHv56YODFYmWojnA",
+            "width" : 1504
+         },
+         {
+            "height" : 700,
+            "html_attributions" : [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118267205191565013523/photos\"\u003eHotel NH Collection Madrid Palacio de Tepa\u003c/a\u003e"
+            ],
+            "photo_reference" : "CoQBdwAAAGIlWwE81Jt6AAuXRSDi78JV-hWL_Zjf2tz8ENdLcvK4IzqosQ5nryk_qyZrWXksG-BBK93T2kDNeRO6njnzUCrfQhb2m69vRiuX4hhldPG4LdacMSmUuv711CqytLtAH2IhayAFWCg6MFVX88i0mvp0692ds942YofdIrnR6DuOEhAnCx9eogUz6RZaeFckWYVEGhS-nI2Xc8uSLJSY_vNCvbvogl1KPQ",
+            "width" : 1050
+         }
+      ],
+      "place_id" : "ChIJxw_vPYAoQg0RpusVRzoPyuQ",
+      "rating" : 4.6,
+      "reference" : "CoQBfgAAAHR1cDYNJMN3pD3T74tjeA-aBiZFuY5d1iMp1YierOVwRNhagDD3RcDQzJtJZVYILsfxN9PMqPmkTRfaOHJSKzw7XVX5SHMcuIoWEhBLOM05C0-GXxOMjXTG1eJ4gjLzT2G803F3x2zTig_IuBXnEUg3t0zDVpKsofsuAs_vGYI7EhDioZB2XBikKTI9zyDulnh3GhRsCpomcTGJJq6rswvcDWp8A8fSFg",
+      "reviews" : [
+         {
+            "aspects" : [
+               {
+                  "rating" : 3,
+                  "type" : "overall"
+               }
+            ],
+            "author_name" : "Maria Mechi",
+            "author_url" : "https://plus.google.com/105809798950559382755",
+            "language" : "en",
+            "profile_photo_url" : "//lh3.googleusercontent.com/-Iw1IDET8c7g/AAAAAAAAAAI/AAAAAAAAB5c/YIdD-9H0N1E/photo.jpg",
+            "rating" : 5,
+            "text" : "Excellent hotel near Plaza de Santa Ana and Plaa del Angel in the Barrio de las Letras. Beautiful, excellent service and beautiful and comfortable rooms! I reAlly enjoyed my stay there!",
+            "time" : 1473000959
+         },
+         {
+            "aspects" : [
+               {
+                  "rating" : 3,
+                  "type" : "overall"
+               }
+            ],
+            "author_name" : "Isabel Villeneuve",
+            "author_url" : "https://plus.google.com/118120993831246219772",
+            "language" : "en",
+            "profile_photo_url" : "//lh6.googleusercontent.com/-TbZu_bXu-b0/AAAAAAAAAAI/AAAAAAAAACU/FaGhUzpNfNA/photo.jpg",
+            "rating" : 5,
+            "text" : "Location,  great staff very helpful and nice. Good abiance, great atmosphere inside and outside. ",
+            "time" : 1467638207
+         },
+         {
+            "aspects" : [
+               {
+                  "rating" : 3,
+                  "type" : "overall"
+               }
+            ],
+            "author_name" : "Ryan Selko",
+            "author_url" : "https://plus.google.com/100044637120788123170",
+            "language" : "en",
+            "profile_photo_url" : "//lh6.googleusercontent.com/-a8H76s5I7ss/AAAAAAAAAAI/AAAAAAAAAEQ/luQRcgv8gg4/photo.jpg",
+            "rating" : 5,
+            "text" : "Very nice rooms, and extremely helpful staff!",
+            "time" : 1473871575
+         },
+         {
+            "aspects" : [
+               {
+                  "rating" : 2,
+                  "type" : "overall"
+               }
+            ],
+            "author_name" : "Ketan Shah",
+            "author_url" : "https://plus.google.com/105073049181985365480",
+            "language" : "en",
+            "rating" : 4,
+            "text" : "Great location and new feeling and comfortable rooms.... Also bang  centre of Madrid do max 15 mins walk to anything major  ",
+            "time" : 1459060478
+         },
+         {
+            "aspects" : [
+               {
+                  "rating" : 2,
+                  "type" : "overall"
+               }
+            ],
+            "author_name" : "Travis Harrell",
+            "author_url" : "https://plus.google.com/113119447799394100917",
+            "language" : "en",
+            "profile_photo_url" : "//lh5.googleusercontent.com/-skTn0FQ54WI/AAAAAAAAAAI/AAAAAAAA564/AoPUfC1gP1U/photo.jpg",
+            "rating" : 4,
+            "text" : "Spacious rooms, great location, friendly staff, free WiFi, hot showers...nice place to stay for the wife and I. ",
+            "time" : 1459129452
+         }
+      ],
+      "scope" : "GOOGLE",
+      "types" : [ "lodging", "restaurant", "food", "point_of_interest", "establishment" ],
+      "url" : "https://maps.google.com/?cid=16486006128918260646",
+      "utc_offset" : 120,
+      "vicinity" : "Calle de San Sebastián, 2, Madrid",
+      "website" : "http://www.nh-collection.com/es/hotel/nh-collection-madrid-palacio-de-tepa"
+   },
+   "status" : "OK"
+}
