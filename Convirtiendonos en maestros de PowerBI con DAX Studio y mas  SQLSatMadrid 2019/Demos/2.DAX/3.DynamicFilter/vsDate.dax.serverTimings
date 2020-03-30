@@ -1,0 +1,38 @@
+{
+  "FileFormatVersion": 1,
+  "StorageEngineDuration": 0,
+  "StorageEngineDurationPercentage": 0.0,
+  "FormulaEngineDuration": 9,
+  "FormulaEngineDurationPercentage": 0.0,
+  "StoreageEngineEvents": [
+    {
+      "Class": 85,
+      "Subclass": 199,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[CalendarYear],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey]\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDate]='DimDate'[Date]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] IN ( 'Multi', 'Blue', 'NA', 'Silver' ) VAND\r\n\t'DimGeography'[CountryRegionName] = 'United States';\r\n",
+      "Duration": null,
+      "CpuTime": null,
+      "RowNumber": 1,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[CalendarYear],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey]\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDate]='DimDate'[Date]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] IN ( 'Multi', 'Blue', 'NA', 'Silver' ) VAND\r\n\t'DimGeography'[CountryRegionName] = 'United States';\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[CalendarYear],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey]\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDate]='DimDate'[Date]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] IN ( 'Multi', 'Blue', 'NA', 'Silver' ) VAND\r\n\t'DimGeography'[CountryRegionName] = 'United States';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 13, 208'\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 2,
+      "EstimatedRows": 13,
+      "EstimatedKBytes": 1,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[CalendarYear],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey]\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDate]='DimDate'[Date]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] IN ( 'Multi', 'Blue', 'NA', 'Silver' ) VAND\r\n\t'DimGeography'[CountryRegionName] = 'United States';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 13, 208'\r\n"
+    }
+  ],
+  "StorageEngineCpu": 0,
+  "TotalDuration": 9,
+  "StorageEngineQueryCount": 1,
+  "VertipaqCacheMatches": 1,
+  "TotalCpuDuration": 16
+}

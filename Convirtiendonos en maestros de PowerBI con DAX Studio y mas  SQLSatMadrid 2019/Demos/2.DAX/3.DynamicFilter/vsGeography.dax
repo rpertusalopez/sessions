@@ -1,0 +1,34 @@
+﻿// DAX Query
+DEFINE
+  
+---- MODEL MEASURES BEGIN ----
+--MEASURE Sales[US Sales 1] = CALCULATE([Total Sales],Geography[Country] = "United States")
+MEASURE Sales[US Sales 1] = CALCULATE([Total Sales],Filter(Geography,Geography[Country] = "United States"))
+---- MODEL MEASURES END ----
+
+VAR __DS0FilterTable = 
+    TREATAS({"Multi",
+      "NA",
+      "Silver",
+      "Blue"}, 'Product'[Color])
+
+  VAR __DS0FilterTable2 = 
+    TREATAS({"M"}, 'Customer'[Gender])
+
+EVALUATE
+  TOPN(
+    502,
+    SUMMARIZECOLUMNS(
+      ROLLUPADDISSUBTOTAL('Geography'[Country], "IsGrandTotalRowTotal"),
+      __DS0FilterTable,
+      __DS0FilterTable2,
+      "US_Sales_1", 'Sales'[US Sales 1]
+    ),
+    [IsGrandTotalRowTotal],
+    0,
+    'Geography'[Country],
+    1
+  )
+
+ORDER BY
+  [IsGrandTotalRowTotal] DESC, 'Geography'[Country]

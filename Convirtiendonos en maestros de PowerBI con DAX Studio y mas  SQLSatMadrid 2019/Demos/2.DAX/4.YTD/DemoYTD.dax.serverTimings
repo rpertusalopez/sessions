@@ -1,0 +1,110 @@
+{
+  "FileFormatVersion": 1,
+  "StorageEngineDuration": 5,
+  "StorageEngineDurationPercentage": 0.0,
+  "FormulaEngineDuration": 30,
+  "FormulaEngineDurationPercentage": 0.0,
+  "StoreageEngineEvents": [
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear],\r\nCOUNT () \r\nFROM 'DimDate';\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 1,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear],\r\nCOUNT () \r\nFROM 'DimDate';\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 195, 1560'\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 2,
+      "EstimatedRows": 195,
+      "EstimatedKBytes": 2,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 195, 1560'\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear],\r\nMAX ( 'DimDate'[CalendarYear] ), MAX ( 'DimDate'[FullDateAlternateKey] ), COUNT () \r\nFROM 'DimDate';\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 3,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear],\r\nMAX ( 'DimDate'[CalendarYear] ), MAX ( 'DimDate'[FullDateAlternateKey] ), COUNT () \r\nFROM 'DimDate';\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear],\r\nMAX ( 'DimDate'[CalendarYear] ), MAX ( 'DimDate'[FullDateAlternateKey] )\r\nFROM 'DimDate';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 195, 4680'\r\n",
+      "Duration": 1,
+      "CpuTime": 0,
+      "RowNumber": 4,
+      "EstimatedRows": 195,
+      "EstimatedKBytes": 5,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear],\r\nMAX ( 'DimDate'[CalendarYear] ), MAX ( 'DimDate'[FullDateAlternateKey] )\r\nFROM 'DimDate';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 195, 4680'\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"C32\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 5,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"C32\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 3652, 14608'\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 6,
+      "EstimatedRows": 3652,
+      "EstimatedKBytes": 15,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 3652, 14608'\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] ), COUNT () \r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDateKey]='DimDate'[DateKey]\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimDate'[FullDateAlternateKey] INB ( 38353.000000, 38354.000000, 38355.000000, 38356.000000, 38357.000000, 38358.000000, 38359.000000, 38360.000000, 38361.000000, 38362.000000..[3652 total values, not all displayed] ) VAND\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] INB ( 'NA', 'Silver', 'Blue', 'Multi' ) ;\r\n",
+      "Duration": 4,
+      "CpuTime": 0,
+      "RowNumber": 7,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] ), COUNT () \r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDateKey]='DimDate'[DateKey]\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimDate'[FullDateAlternateKey] INB ( 38353.000000, 38354.000000, 38355.000000, 38356.000000, 38357.000000, 38358.000000, 38359.000000, 38360.000000, 38361.000000, 38362.000000..[3652 total values, not all displayed] ) VAND\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] INB ( 'NA', 'Silver', 'Blue', 'Multi' ) ;\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDateKey]='DimDate'[DateKey]\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimDate'[FullDateAlternateKey] IN ( 38732.000000, 40174.000000, 40593.000000, 40137.000000, 40556.000000, 41998.000000, 39681.000000, 40100.000000, 41542.000000, 41961.000000..[3652 total values, not all displayed] ) VAND\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] IN ( 'Multi', 'Blue', 'NA', 'Silver' ) ;\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 3655, 58480'\r\n",
+      "Duration": 4,
+      "CpuTime": 0,
+      "RowNumber": 8,
+      "EstimatedRows": 3655,
+      "EstimatedKBytes": 58,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDateKey]='DimDate'[DateKey]\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimDate'[FullDateAlternateKey] IN ( 38732.000000, 40174.000000, 40593.000000, 40137.000000, 40556.000000, 41998.000000, 39681.000000, 40100.000000, 41542.000000, 41961.000000..[3652 total values, not all displayed] ) VAND\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] IN ( 'Multi', 'Blue', 'NA', 'Silver' ) ;\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 3655, 58480'\r\n"
+    }
+  ],
+  "StorageEngineCpu": 0,
+  "TotalDuration": 35,
+  "StorageEngineQueryCount": 4,
+  "VertipaqCacheMatches": 0,
+  "TotalCpuDuration": 47
+}

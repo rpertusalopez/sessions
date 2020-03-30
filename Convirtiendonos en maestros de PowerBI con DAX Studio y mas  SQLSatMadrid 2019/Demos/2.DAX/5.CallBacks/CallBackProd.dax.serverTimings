@@ -1,0 +1,62 @@
+{
+  "FileFormatVersion": 1,
+  "StorageEngineDuration": 201,
+  "StorageEngineDurationPercentage": 0.0,
+  "FormulaEngineDuration": 721,
+  "FormulaEngineDurationPercentage": 0.0,
+  "StoreageEngineEvents": [
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"DENSE\";\r\nWITH\r\n\t$Expr0 := 1\r\nSELECT\r\n'Shop'[Company Desc],\r\nSUM ( @$Expr0 ), COUNT () \r\nFROM 'Transaction'\r\n\tLEFT OUTER JOIN 'Shop' ON 'Transaction'[ShopId]='Shop'[ShopId]\r\n\tLEFT OUTER JOIN 'Date' ON 'Transaction'[DateCode]='Date'[DateCode]\r\nWHERE\r\n\t'Date'[Month Code] = 201909 VAND\r\n\t ( PFCASTCOALESCE ( 'Transaction'[TransactionQuantity] AS  REAL ) > COALESCE ( 3.000000 )  ) ;\r\n",
+      "Duration": 117,
+      "CpuTime": 1516,
+      "RowNumber": 1,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"DENSE\";\r\nWITH\r\n\t$Expr0 := 1\r\nSELECT\r\n'Shop'[Company Desc],\r\nSUM ( @$Expr0 ), COUNT () \r\nFROM 'Transaction'\r\n\tLEFT OUTER JOIN 'Shop' ON 'Transaction'[ShopId]='Shop'[ShopId]\r\n\tLEFT OUTER JOIN 'Date' ON 'Transaction'[DateCode]='Date'[DateCode]\r\nWHERE\r\n\t'Date'[Month Code] = 201909 VAND\r\n\t ( PFCASTCOALESCE ( 'Transaction'[TransactionQuantity] AS  REAL ) > COALESCE ( 3.000000 )  ) ;\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nWITH\r\n\t$Expr0 := 1\r\nSELECT\r\n'Shop'[Company Desc],\r\nSUM ( @$Expr0 )\r\nFROM 'Transaction'\r\n\tLEFT OUTER JOIN 'Shop' ON 'Transaction'[ShopId]='Shop'[ShopId]\r\n\tLEFT OUTER JOIN 'Date' ON 'Transaction'[DateCode]='Date'[DateCode]\r\nWHERE\r\n\t'Date'[Month Code] = 201909 VAND\r\n\t ( PFCASTCOALESCE ( 'Transaction'[TransactionQuantity] AS  REAL ) > COALESCE ( 3.000000 )  ) ;\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 328, 5248'\r\n",
+      "Duration": 122,
+      "CpuTime": 1516,
+      "RowNumber": 2,
+      "EstimatedRows": 328,
+      "EstimatedKBytes": 6,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nWITH\r\n\t$Expr0 := 1\r\nSELECT\r\n'Shop'[Company Desc],\r\nSUM ( @$Expr0 )\r\nFROM 'Transaction'\r\n\tLEFT OUTER JOIN 'Shop' ON 'Transaction'[ShopId]='Shop'[ShopId]\r\n\tLEFT OUTER JOIN 'Date' ON 'Transaction'[DateCode]='Date'[DateCode]\r\nWHERE\r\n\t'Date'[Month Code] = 201909 VAND\r\n\t ( PFCASTCOALESCE ( 'Transaction'[TransactionQuantity] AS  REAL ) > COALESCE ( 3.000000 )  ) ;\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 328, 5248'\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"DENSE\";\r\nWITH\r\n\t$Expr0 := 1\r\nSELECT\r\nSUM ( @$Expr0 ), COUNT () \r\nFROM 'Transaction'\r\n\tLEFT OUTER JOIN 'Date' ON 'Transaction'[DateCode]='Date'[DateCode]\r\nWHERE\r\n\t'Date'[Month Code] = 201909 VAND\r\n\t ( PFCASTCOALESCE ( 'Transaction'[TransactionQuantity] AS  REAL ) > COALESCE ( 3.000000 )  ) ;\r\n",
+      "Duration": 75,
+      "CpuTime": 609,
+      "RowNumber": 3,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"DENSE\";\r\nWITH\r\n\t$Expr0 := 1\r\nSELECT\r\nSUM ( @$Expr0 ), COUNT () \r\nFROM 'Transaction'\r\n\tLEFT OUTER JOIN 'Date' ON 'Transaction'[DateCode]='Date'[DateCode]\r\nWHERE\r\n\t'Date'[Month Code] = 201909 VAND\r\n\t ( PFCASTCOALESCE ( 'Transaction'[TransactionQuantity] AS  REAL ) > COALESCE ( 3.000000 )  ) ;\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nWITH\r\n\t$Expr0 := 1\r\nSELECT\r\nSUM ( @$Expr0 )\r\nFROM 'Transaction'\r\n\tLEFT OUTER JOIN 'Date' ON 'Transaction'[DateCode]='Date'[DateCode]\r\nWHERE\r\n\t'Date'[Month Code] = 201909 VAND\r\n\t ( PFCASTCOALESCE ( 'Transaction'[TransactionQuantity] AS  REAL ) > COALESCE ( 3.000000 )  ) ;\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 1, 16'\r\n",
+      "Duration": 79,
+      "CpuTime": 609,
+      "RowNumber": 4,
+      "EstimatedRows": 1,
+      "EstimatedKBytes": 1,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nWITH\r\n\t$Expr0 := 1\r\nSELECT\r\nSUM ( @$Expr0 )\r\nFROM 'Transaction'\r\n\tLEFT OUTER JOIN 'Date' ON 'Transaction'[DateCode]='Date'[DateCode]\r\nWHERE\r\n\t'Date'[Month Code] = 201909 VAND\r\n\t ( PFCASTCOALESCE ( 'Transaction'[TransactionQuantity] AS  REAL ) > COALESCE ( 3.000000 )  ) ;\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 1, 16'\r\n"
+    }
+  ],
+  "StorageEngineCpu": 2125,
+  "TotalDuration": 922,
+  "StorageEngineQueryCount": 2,
+  "VertipaqCacheMatches": 0,
+  "TotalCpuDuration": 719
+}

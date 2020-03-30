@@ -1,0 +1,6 @@
+foreach(var m in Selected.Measures) {
+
+    m.FormatString = "#,0";
+    if(m.Name.Contains('%')) {m.FormatString = "#,0.0%;-#,0.0%;#,0.0%";};
+
+}

@@ -1,0 +1,47 @@
+﻿// DAX Query
+DEFINE
+  VAR __DS0FilterTable = 
+    FILTER(
+      KEEPFILTERS(VALUES('Global Item'[Global Manufacturer Desc])),
+      NOT(
+        OR(
+          'Global Item'[Global Manufacturer Desc] = "GENERIC MANUFACTURER",
+          'Global Item'[Global Manufacturer Desc] = "UNKNOWN"
+        )
+      )
+    )
+
+  VAR __DS0FilterTable2 = 
+    TREATAS({"FXY"}, 'Reporting Currency'[Reporting Currency Code])
+
+  VAR __DS0FilterTable3 = 
+    TREATAS({TRUE}, 'Shop'[Is Store Retail])
+
+  VAR __DS0FilterTable4 = 
+    FILTER(
+      KEEPFILTERS(VALUES('Date'[Year])),
+      AND('Date'[Year] IN {2019}, 'Date'[Year] IN {2018,
+        2017,
+        2019})
+    )
+
+EVALUATE
+  TOPN(
+    1001,
+    SUMMARIZECOLUMNS(
+      'Global Item'[Global Manufacturer Desc],
+      __DS0FilterTable,
+      __DS0FilterTable2,
+      __DS0FilterTable3,
+      __DS0FilterTable4,
+      "Net_Value", 'Transaction'[Net Value],
+      "v__Net_Sales__RED__vs_Total_Net_Sales", IGNORE('Transaction'[% Net Sales (RED) vs Total Net Sales])
+    ),
+    [Net_Value],
+    0,
+    'Global Item'[Global Manufacturer Desc],
+    1
+  )
+
+ORDER BY
+  [Net_Value] DESC, 'Global Item'[Global Manufacturer Desc]

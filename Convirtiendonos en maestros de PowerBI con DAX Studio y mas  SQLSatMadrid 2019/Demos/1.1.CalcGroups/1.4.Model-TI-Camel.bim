@@ -1,0 +1,3070 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1500,
+  "model": {
+    "discourageImplicitMeasures": true,
+    "dataSources": [
+      {
+        "name": "Local",
+        "connectionString": "provider=SQLOLEDB;data source=ahk9kp46w0.database.windows.net;persist security info=True;password=********;user id=rpertusa;initial catalog=datacamp",
+        "impersonationMode": "impersonateServiceAccount",
+        "provider": "System.Data.OleDb",
+        "annotations": [
+          {
+            "name": "TabularEditor_RowLimitClause",
+            "value": "1"
+          },
+          {
+            "name": "TabularEditor_IdentifierQuoting",
+            "value": "1"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Customer",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "GeographyKey",
+            "dataType": "int64",
+            "sourceColumn": "GeographyKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "CustomerAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "CustomerAlternateKey",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "sourceColumn": "FirstName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "MiddleName",
+            "dataType": "string",
+            "sourceColumn": "MiddleName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "sourceColumn": "LastName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "NameStyle",
+            "dataType": "boolean",
+            "sourceColumn": "NameStyle",
+            "sourceProviderType": "Boolean"
+          },
+          {
+            "name": "BirthDate",
+            "dataType": "string",
+            "sourceColumn": "BirthDate",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "MaritalStatus",
+            "dataType": "string",
+            "sourceColumn": "MaritalStatus",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "Suffix",
+            "dataType": "string",
+            "sourceColumn": "Suffix",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "EmailAddress",
+            "dataType": "string",
+            "sourceColumn": "EmailAddress",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "YearlyIncome",
+            "dataType": "decimal",
+            "sourceColumn": "YearlyIncome",
+            "sourceProviderType": "Decimal"
+          },
+          {
+            "name": "TotalChildren",
+            "dataType": "int64",
+            "sourceColumn": "TotalChildren",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "NumberChildrenAtHome",
+            "dataType": "int64",
+            "sourceColumn": "NumberChildrenAtHome",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "EnglishEducation",
+            "dataType": "string",
+            "sourceColumn": "EnglishEducation",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SpanishEducation",
+            "dataType": "string",
+            "sourceColumn": "SpanishEducation",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "FrenchEducation",
+            "dataType": "string",
+            "sourceColumn": "FrenchEducation",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "EnglishOccupation",
+            "dataType": "string",
+            "sourceColumn": "EnglishOccupation",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SpanishOccupation",
+            "dataType": "string",
+            "sourceColumn": "SpanishOccupation",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "FrenchOccupation",
+            "dataType": "string",
+            "sourceColumn": "FrenchOccupation",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "HouseOwnerFlag",
+            "dataType": "string",
+            "sourceColumn": "HouseOwnerFlag",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "NumberCarsOwned",
+            "dataType": "int64",
+            "sourceColumn": "NumberCarsOwned",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "AddressLine1",
+            "dataType": "string",
+            "sourceColumn": "AddressLine1",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "AddressLine2",
+            "dataType": "string",
+            "sourceColumn": "AddressLine2",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "DateFirstPurchase",
+            "dataType": "string",
+            "sourceColumn": "DateFirstPurchase",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "CommuteDistance",
+            "dataType": "string",
+            "sourceColumn": "CommuteDistance",
+            "sourceProviderType": "String"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimCustomer",
+            "source": {
+              "type": "query",
+              "query": [
+                "SELECT",
+                "\t*",
+                "FROM",
+                "\t[dbo].[DimCustomer]"
+              ],
+              "dataSource": "Local"
+            },
+            "annotations": [
+              {
+                "name": "TabularEditor_TableSchema",
+                "value": "{\"Name\":\"DimCustomer\",\"Schema\":\"dbo\",\"Database\":\"AdventureWorksDW2014\",\"IncludedColumns\":[\"CustomerKey\",\"GeographyKey\",\"CustomerAlternateKey\",\"Title\",\"FirstName\",\"MiddleName\",\"LastName\",\"NameStyle\",\"BirthDate\",\"MaritalStatus\",\"Suffix\",\"Gender\",\"EmailAddress\",\"YearlyIncome\",\"TotalChildren\",\"NumberChildrenAtHome\",\"EnglishEducation\",\"SpanishEducation\",\"FrenchEducation\",\"EnglishOccupation\",\"SpanishOccupation\",\"FrenchOccupation\",\"HouseOwnerFlag\",\"NumberCarsOwned\",\"AddressLine1\",\"AddressLine2\",\"Phone\",\"DateFirstPurchase\",\"CommuteDistance\"],\"SelectAll\":true}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Date",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "isKey": true,
+            "sourceColumn": "FullDateAlternateKey",
+            "sourceProviderType": "String",
+            "annotations": [
+              {
+                "name": "TabularEditor_MarkAsDateKey",
+                "value": "1"
+              }
+            ]
+          },
+          {
+            "name": "DayNumberOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "DayNumberOfWeek",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "EnglishDayNameOfWeek",
+            "dataType": "string",
+            "sourceColumn": "EnglishDayNameOfWeek",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SpanishDayNameOfWeek",
+            "dataType": "string",
+            "sourceColumn": "SpanishDayNameOfWeek",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "FrenchDayNameOfWeek",
+            "dataType": "string",
+            "sourceColumn": "FrenchDayNameOfWeek",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "DayNumberOfMonth",
+            "dataType": "int64",
+            "sourceColumn": "DayNumberOfMonth",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "DayNumberOfYear",
+            "dataType": "string",
+            "sourceColumn": "DayNumberOfYear",
+            "sourceProviderType": "Int16"
+          },
+          {
+            "name": "WeekNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "WeekNumberOfYear",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "EnglishMonthName",
+            "dataType": "string",
+            "sourceColumn": "EnglishMonthName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SpanishMonthName",
+            "dataType": "string",
+            "sourceColumn": "SpanishMonthName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "FrenchMonthName",
+            "dataType": "string",
+            "sourceColumn": "FrenchMonthName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "MonthNumberOfYear",
+            "dataType": "int64",
+            "sourceColumn": "MonthNumberOfYear",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "CalendarQuarter",
+            "dataType": "int64",
+            "sourceColumn": "CalendarQuarter",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "CalendarYear",
+            "dataType": "string",
+            "sourceColumn": "CalendarYear",
+            "sourceProviderType": "Int16"
+          },
+          {
+            "name": "CalendarSemester",
+            "dataType": "int64",
+            "sourceColumn": "CalendarSemester",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "FiscalQuarter",
+            "dataType": "int64",
+            "sourceColumn": "FiscalQuarter",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "FiscalYear",
+            "dataType": "string",
+            "sourceColumn": "FiscalYear",
+            "sourceProviderType": "Int16"
+          },
+          {
+            "name": "FiscalSemester",
+            "dataType": "int64",
+            "sourceColumn": "FiscalSemester",
+            "sourceProviderType": "Byte"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "source": {
+              "type": "query",
+              "query": [
+                "SELECT",
+                "\t*",
+                "FROM",
+                "\t[dbo].[DimDate]"
+              ],
+              "dataSource": "Local"
+            },
+            "annotations": [
+              {
+                "name": "TabularEditor_TableSchema",
+                "value": "{\"Name\":\"DimDate\",\"Schema\":\"dbo\",\"Database\":\"AdventureWorksDW2014\",\"IncludedColumns\":[\"DateKey\",\"FullDateAlternateKey\",\"DayNumberOfWeek\",\"EnglishDayNameOfWeek\",\"SpanishDayNameOfWeek\",\"FrenchDayNameOfWeek\",\"DayNumberOfMonth\",\"DayNumberOfYear\",\"WeekNumberOfYear\",\"EnglishMonthName\",\"SpanishMonthName\",\"FrenchMonthName\",\"MonthNumberOfYear\",\"CalendarQuarter\",\"CalendarYear\",\"CalendarSemester\",\"FiscalQuarter\",\"FiscalYear\",\"FiscalSemester\"],\"SelectAll\":true}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Geography",
+        "columns": [
+          {
+            "name": "GeographyKey",
+            "dataType": "int64",
+            "sourceColumn": "GeographyKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "StateProvinceCode",
+            "dataType": "string",
+            "sourceColumn": "StateProvinceCode",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "StateProvinceName",
+            "dataType": "string",
+            "sourceColumn": "StateProvinceName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "CountryRegionCode",
+            "dataType": "string",
+            "sourceColumn": "CountryRegionCode",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "EnglishCountryRegionName",
+            "dataType": "string",
+            "sourceColumn": "EnglishCountryRegionName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SpanishCountryRegionName",
+            "dataType": "string",
+            "sourceColumn": "SpanishCountryRegionName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "FrenchCountryRegionName",
+            "dataType": "string",
+            "sourceColumn": "FrenchCountryRegionName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SalesTerritoryKey",
+            "dataType": "int64",
+            "sourceColumn": "SalesTerritoryKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "IpAddressLocator",
+            "dataType": "string",
+            "sourceColumn": "IpAddressLocator",
+            "sourceProviderType": "String"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimGeography",
+            "source": {
+              "type": "query",
+              "query": [
+                "SELECT",
+                "\t*",
+                "FROM",
+                "\t[dbo].[DimGeography]"
+              ],
+              "dataSource": "Local"
+            },
+            "annotations": [
+              {
+                "name": "TabularEditor_TableSchema",
+                "value": "{\"Name\":\"DimGeography\",\"Schema\":\"dbo\",\"Database\":\"AdventureWorksDW2014\",\"IncludedColumns\":[\"GeographyKey\",\"City\",\"StateProvinceCode\",\"StateProvinceName\",\"CountryRegionCode\",\"EnglishCountryRegionName\",\"SpanishCountryRegionName\",\"FrenchCountryRegionName\",\"PostalCode\",\"SalesTerritoryKey\",\"IpAddressLocator\"],\"SelectAll\":true}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Product",
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "ProductAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "ProductAlternateKey",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "WeightUnitMeasureCode",
+            "dataType": "string",
+            "sourceColumn": "WeightUnitMeasureCode",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SizeUnitMeasureCode",
+            "dataType": "string",
+            "sourceColumn": "SizeUnitMeasureCode",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "EnglishProductName",
+            "dataType": "string",
+            "sourceColumn": "EnglishProductName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SpanishProductName",
+            "dataType": "string",
+            "sourceColumn": "SpanishProductName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "FrenchProductName",
+            "dataType": "string",
+            "sourceColumn": "FrenchProductName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "StandardCost",
+            "dataType": "decimal",
+            "sourceColumn": "StandardCost",
+            "sourceProviderType": "Decimal"
+          },
+          {
+            "name": "FinishedGoodsFlag",
+            "dataType": "boolean",
+            "sourceColumn": "FinishedGoodsFlag",
+            "sourceProviderType": "Boolean"
+          },
+          {
+            "name": "Color",
+            "dataType": "string",
+            "sourceColumn": "Color",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SafetyStockLevel",
+            "dataType": "string",
+            "sourceColumn": "SafetyStockLevel",
+            "sourceProviderType": "Int16"
+          },
+          {
+            "name": "ReorderPoint",
+            "dataType": "string",
+            "sourceColumn": "ReorderPoint",
+            "sourceProviderType": "Int16"
+          },
+          {
+            "name": "ListPrice",
+            "dataType": "decimal",
+            "sourceColumn": "ListPrice",
+            "sourceProviderType": "Decimal"
+          },
+          {
+            "name": "Size",
+            "dataType": "string",
+            "sourceColumn": "Size",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SizeRange",
+            "dataType": "string",
+            "sourceColumn": "SizeRange",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "Weight",
+            "dataType": "double",
+            "sourceColumn": "Weight",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "DaysToManufacture",
+            "dataType": "int64",
+            "sourceColumn": "DaysToManufacture",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "ProductLine",
+            "dataType": "string",
+            "sourceColumn": "ProductLine",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "DealerPrice",
+            "dataType": "decimal",
+            "sourceColumn": "DealerPrice",
+            "sourceProviderType": "Decimal"
+          },
+          {
+            "name": "Class",
+            "dataType": "string",
+            "sourceColumn": "Class",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "Style",
+            "dataType": "string",
+            "sourceColumn": "Style",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "ModelName",
+            "dataType": "string",
+            "sourceColumn": "ModelName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "EnglishDescription",
+            "dataType": "string",
+            "sourceColumn": "EnglishDescription",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "FrenchDescription",
+            "dataType": "string",
+            "sourceColumn": "FrenchDescription",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "ChineseDescription",
+            "dataType": "string",
+            "sourceColumn": "ChineseDescription",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "ArabicDescription",
+            "dataType": "string",
+            "sourceColumn": "ArabicDescription",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "HebrewDescription",
+            "dataType": "string",
+            "sourceColumn": "HebrewDescription",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "ThaiDescription",
+            "dataType": "string",
+            "sourceColumn": "ThaiDescription",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "GermanDescription",
+            "dataType": "string",
+            "sourceColumn": "GermanDescription",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "JapaneseDescription",
+            "dataType": "string",
+            "sourceColumn": "JapaneseDescription",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "TurkishDescription",
+            "dataType": "string",
+            "sourceColumn": "TurkishDescription",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate",
+            "sourceProviderType": "DateTime"
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate",
+            "sourceProviderType": "DateTime"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "sourceProviderType": "String"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimProduct",
+            "source": {
+              "type": "query",
+              "query": [
+                "SELECT",
+                "\t*",
+                "FROM",
+                "\t[dbo].[DimProduct]"
+              ],
+              "dataSource": "Local"
+            },
+            "annotations": [
+              {
+                "name": "TabularEditor_TableSchema",
+                "value": "{\"Name\":\"DimProduct\",\"Schema\":\"dbo\",\"Database\":\"AdventureWorksDW2014\",\"IncludedColumns\":[\"ProductKey\",\"ProductAlternateKey\",\"ProductSubcategoryKey\",\"WeightUnitMeasureCode\",\"SizeUnitMeasureCode\",\"EnglishProductName\",\"SpanishProductName\",\"FrenchProductName\",\"StandardCost\",\"FinishedGoodsFlag\",\"Color\",\"SafetyStockLevel\",\"ReorderPoint\",\"ListPrice\",\"Size\",\"SizeRange\",\"Weight\",\"DaysToManufacture\",\"ProductLine\",\"DealerPrice\",\"Class\",\"Style\",\"ModelName\",\"LargePhoto\",\"EnglishDescription\",\"FrenchDescription\",\"ChineseDescription\",\"ArabicDescription\",\"HebrewDescription\",\"ThaiDescription\",\"GermanDescription\",\"JapaneseDescription\",\"TurkishDescription\",\"StartDate\",\"EndDate\",\"Status\"],\"SelectAll\":true}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Product Category",
+        "columns": [
+          {
+            "name": "ProductCategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "ProductCategoryAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryAlternateKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "EnglishProductCategoryName",
+            "dataType": "string",
+            "sourceColumn": "EnglishProductCategoryName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SpanishProductCategoryName",
+            "dataType": "string",
+            "sourceColumn": "SpanishProductCategoryName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "FrenchProductCategoryName",
+            "dataType": "string",
+            "sourceColumn": "FrenchProductCategoryName",
+            "sourceProviderType": "String"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimProductCategory",
+            "source": {
+              "type": "query",
+              "query": [
+                "SELECT",
+                "\t*",
+                "FROM",
+                "\t[dbo].[DimProductCategory]"
+              ],
+              "dataSource": "Local"
+            },
+            "annotations": [
+              {
+                "name": "TabularEditor_TableSchema",
+                "value": "{\"Name\":\"DimProductCategory\",\"Schema\":\"dbo\",\"Database\":\"AdventureWorksDW2014\",\"IncludedColumns\":[\"ProductCategoryKey\",\"ProductCategoryAlternateKey\",\"EnglishProductCategoryName\",\"SpanishProductCategoryName\",\"FrenchProductCategoryName\"],\"SelectAll\":true}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Product Subcategory",
+        "columns": [
+          {
+            "name": "Product Subcategory Key",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "Product Subcategory Alternate Key",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryAlternateKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "English Product Subcategory Name",
+            "dataType": "string",
+            "sourceColumn": "EnglishProductSubcategoryName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "Spanish Product Subcategory Name",
+            "dataType": "string",
+            "sourceColumn": "SpanishProductSubcategoryName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "French Product Subcategory Name",
+            "dataType": "string",
+            "sourceColumn": "FrenchProductSubcategoryName",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "Product Category Key",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryKey",
+            "sourceProviderType": "Int32"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimProductSubcategory",
+            "source": {
+              "type": "query",
+              "query": [
+                "SELECT",
+                "\t*",
+                "FROM",
+                "\t[dbo].[DimProductSubcategory]"
+              ],
+              "dataSource": "Local"
+            },
+            "annotations": [
+              {
+                "name": "TabularEditor_TableSchema",
+                "value": "{\"Name\":\"DimProductSubcategory\",\"Schema\":\"dbo\",\"Database\":\"AdventureWorksDW2014\",\"IncludedColumns\":[\"ProductSubcategoryKey\",\"ProductSubcategoryAlternateKey\",\"EnglishProductSubcategoryName\",\"SpanishProductSubcategoryName\",\"FrenchProductSubcategoryName\",\"ProductCategoryKey\"],\"SelectAll\":true}"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Internet Sales",
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "OrderDateKey",
+            "dataType": "int64",
+            "sourceColumn": "OrderDateKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "DueDateKey",
+            "dataType": "int64",
+            "sourceColumn": "DueDateKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "ShipDateKey",
+            "dataType": "int64",
+            "sourceColumn": "ShipDateKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "PromotionKey",
+            "dataType": "int64",
+            "sourceColumn": "PromotionKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "CurrencyKey",
+            "dataType": "int64",
+            "sourceColumn": "CurrencyKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "SalesTerritoryKey",
+            "dataType": "int64",
+            "sourceColumn": "SalesTerritoryKey",
+            "sourceProviderType": "Int32"
+          },
+          {
+            "name": "SalesOrderNumber",
+            "dataType": "string",
+            "sourceColumn": "SalesOrderNumber",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "SalesOrderLineNumber",
+            "dataType": "int64",
+            "sourceColumn": "SalesOrderLineNumber",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "RevisionNumber",
+            "dataType": "int64",
+            "sourceColumn": "RevisionNumber",
+            "sourceProviderType": "Byte"
+          },
+          {
+            "name": "OrderQuantity",
+            "dataType": "string",
+            "sourceColumn": "OrderQuantity",
+            "sourceProviderType": "Int16"
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPrice",
+            "sourceProviderType": "Decimal"
+          },
+          {
+            "name": "ExtendedAmount",
+            "dataType": "decimal",
+            "sourceColumn": "ExtendedAmount",
+            "sourceProviderType": "Decimal"
+          },
+          {
+            "name": "UnitPriceDiscountPct",
+            "dataType": "double",
+            "sourceColumn": "UnitPriceDiscountPct",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "DiscountAmount",
+            "dataType": "double",
+            "sourceColumn": "DiscountAmount",
+            "sourceProviderType": "Double"
+          },
+          {
+            "name": "ProductStandardCost",
+            "dataType": "decimal",
+            "sourceColumn": "ProductStandardCost",
+            "sourceProviderType": "Decimal"
+          },
+          {
+            "name": "TotalProductCost",
+            "dataType": "decimal",
+            "sourceColumn": "TotalProductCost",
+            "sourceProviderType": "Decimal"
+          },
+          {
+            "name": "SalesAmount",
+            "dataType": "decimal",
+            "sourceColumn": "SalesAmount",
+            "sourceProviderType": "Decimal"
+          },
+          {
+            "name": "TaxAmt",
+            "dataType": "decimal",
+            "sourceColumn": "TaxAmt",
+            "sourceProviderType": "Decimal"
+          },
+          {
+            "name": "Freight",
+            "dataType": "decimal",
+            "sourceColumn": "Freight",
+            "sourceProviderType": "Decimal"
+          },
+          {
+            "name": "CarrierTrackingNumber",
+            "dataType": "string",
+            "sourceColumn": "CarrierTrackingNumber",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "CustomerPONumber",
+            "dataType": "string",
+            "sourceColumn": "CustomerPONumber",
+            "sourceProviderType": "String"
+          },
+          {
+            "name": "OrderDate",
+            "dataType": "dateTime",
+            "sourceColumn": "OrderDate",
+            "sourceProviderType": "DateTime"
+          },
+          {
+            "name": "DueDate",
+            "dataType": "dateTime",
+            "sourceColumn": "DueDate",
+            "sourceProviderType": "DateTime"
+          },
+          {
+            "name": "ShipDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ShipDate",
+            "sourceProviderType": "DateTime"
+          },
+          {
+            "type": "calculated",
+            "name": "Margin",
+            "dataType": "decimal",
+            "isDataTypeInferred": true,
+            "expression": "[SalesAmount]-[TotalProductCost]",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactInternetSales",
+            "source": {
+              "type": "query",
+              "query": [
+                "SELECT",
+                "\t*",
+                "FROM",
+                "\t[dbo].[FactInternetSales]"
+              ],
+              "dataSource": "Local"
+            },
+            "annotations": [
+              {
+                "name": "TabularEditor_TableSchema",
+                "value": "{\"Name\":\"FactInternetSales\",\"Schema\":\"dbo\",\"Database\":\"AdventureWorksDW2014\",\"IncludedColumns\":[\"ProductKey\",\"OrderDateKey\",\"DueDateKey\",\"ShipDateKey\",\"CustomerKey\",\"PromotionKey\",\"CurrencyKey\",\"SalesTerritoryKey\",\"SalesOrderNumber\",\"SalesOrderLineNumber\",\"RevisionNumber\",\"OrderQuantity\",\"UnitPrice\",\"ExtendedAmount\",\"UnitPriceDiscountPct\",\"DiscountAmount\",\"ProductStandardCost\",\"TotalProductCost\",\"SalesAmount\",\"TaxAmt\",\"Freight\",\"CarrierTrackingNumber\",\"CustomerPONumber\",\"OrderDate\",\"DueDate\",\"ShipDate\"],\"SelectAll\":true}"
+              }
+            ]
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Sales Amount",
+            "expression": "SUM('Internet Sales'[SalesAmount])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order",
+            "expression": "DISTINCTCOUNT([SalesOrderNumber])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Internet Order Lines Count",
+            "expression": "COUNTA([SalesOrderLineNumber])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Internet Total Units",
+            "expression": "SUM([OrderQuantity])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Internet Total Discount Amount",
+            "expression": "SUM([DiscountAmount])",
+            "formatString": "#,0"
+          },
+          {
+            "name": "Internet Total Product Cost",
+            "expression": "SUM([TotalProductCost])",
+            "formatString": "#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Internet Total Sales",
+            "expression": "SUM([SalesAmount])",
+            "formatString": "#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Internet Total Margin",
+            "expression": "SUM([Margin])",
+            "formatString": "#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Internet Total Tax Amt",
+            "expression": "SUM([TaxAmt])",
+            "formatString": "#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Internet Total Freight",
+            "expression": "SUM([Freight])",
+            "formatString": "#,0",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"Currency\" Accuracy=\"2\" ThousandSeparator=\"True\"><Currency LCID=\"1033\" DisplayName=\"$ English (United States)\" Symbol=\"$\" PositivePattern=\"0\" NegativePattern=\"0\" /></Format>"
+              }
+            ]
+          },
+          {
+            "name": "Total Sales Amount Year To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Total Sales Amount],DATESYTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Total Sales Amount Year To Date PY",
+            "expression": [
+              "CALCULATE(",
+              "[Total Sales Amount],DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Total Sales Amount Year To Date Previous Year Growth",
+            "expression": "[Total Sales Amount Year To Date] - [Total Sales Amount Year To Date PY]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Total Sales Amount Year To Date Previous Year Growth%",
+            "expression": "DIVIDE([Total Sales Amount Year To Date Previous Year Growth],[Total Sales Amount Year To Date PY])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Total Sales Amount Previous Year",
+            "expression": "CALCULATE([Total Sales Amount],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Total Sales Amount Previous Year Growth",
+            "expression": "[Total Sales Amount] - [Total Sales Amount Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Total Sales Amount Previous Year Growth%",
+            "expression": "DIVIDE([Total Sales Amount Previous Year Growth],[Total Sales Amount Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Total Sales Amount Previous Year Same WeekDay",
+            "expression": "CALCULATE([Total Sales Amount],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Total Sales Amount Previous Year Same WeekDay Growth",
+            "expression": "[Total Sales Amount] - [Total Sales Amount Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Total Sales Amount Previous Year Same WeekDay Growth%",
+            "expression": "DIVIDE([Total Sales Amount Previous Year Growth],[Total Sales Amount Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Total Sales Amount Month To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Total Sales Amount],DATESMTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Total Sales Amount Month To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Total Sales Amount],DATESMTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Total Sales Amount Month To Date Previous Year Growth",
+            "expression": "[Total Sales Amount Month To Date] - [Total Sales Amount Month To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Total Sales Amount Month To Date Previous Year Growth%",
+            "expression": "DIVIDE([Total Sales Amount Month To Date Previous Year Growth],[Total Sales Amount Month To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Total Sales Amount Quarter To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Total Sales Amount],DATESQTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Total Sales Amount Quarter To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Total Sales Amount],DATESQTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Total Sales Amount Quarter To Date Previous Year Growth",
+            "expression": "[Total Sales Amount Quarter To Date] - [Total Sales Amount Quarter To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Total Sales Amount Quarter To Date Previous Year Growth%",
+            "expression": "DIVIDE([Total Sales Amount Quarter To Date Previous Year Growth],[Total Sales Amount Quarter To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Total Sales Amount 12 MAT",
+            "expression": [
+              "CALCULATE(",
+              "[Total Sales Amount],DATESINPERIOD('Date'[Date],LASTDATE('Date'[Date]), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Total Sales Amount 12 MAT Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Total Sales Amount],DATESINPERIOD('Date'[Date],DATEADD (LASTDATE( 'Date'[Date]),-1, YEAR), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Total Sales Amount 12 MAT Previous Year Growth",
+            "expression": "[Total Sales Amount Quarter To Date] - [Total Sales Amount 12 MAT Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Total Sales Amount 12 MAT Previous Year Growth%",
+            "expression": "DIVIDE([Total Sales Amount 12 MAT Previous Year Growth],[Total Sales Amount 12 MAT Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Total Sales Amount Last 4 Weeks",
+            "expression": [
+              "CALCULATE(",
+              "[Total Sales Amount],DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Total Sales Amount Last 4 Weeks Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Total Sales Amount],DATESINPERIOD('Date'[Date], DATEADD(LASTDATE('Date'[Date]), -364, DAY), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Total Sales Amount Last 4 Weeks Previous Year Growth",
+            "expression": "[Total Sales Amount Quarter To Date] - [Total Sales Amount Last 4 Weeks Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Total Sales Amount Last 4 Weeks Previous Year Growth%",
+            "expression": "DIVIDE([Total Sales Amount 12 MAT Previous Year Growth],[Total Sales Amount Last 4 Weeks Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Year To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Distinct Count Sales Order],DATESYTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Year To Date PY",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Distinct Count Sales Order],DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Year To Date Previous Year Growth",
+            "expression": "[Internet Distinct Count Sales Order Year To Date] - [Internet Distinct Count Sales Order Year To Date PY]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Year To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Distinct Count Sales Order Year To Date Previous Year Growth],[Internet Distinct Count Sales Order Year To Date PY])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Previous Year",
+            "expression": "CALCULATE([Internet Distinct Count Sales Order],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Previous Year Growth",
+            "expression": "[Internet Distinct Count Sales Order] - [Internet Distinct Count Sales Order Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Previous Year Growth%",
+            "expression": "DIVIDE([Internet Distinct Count Sales Order Previous Year Growth],[Internet Distinct Count Sales Order Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Previous Year Same WeekDay",
+            "expression": "CALCULATE([Internet Distinct Count Sales Order],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Previous Year Same WeekDay Growth",
+            "expression": "[Internet Distinct Count Sales Order] - [Internet Distinct Count Sales Order Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Previous Year Same WeekDay Growth%",
+            "expression": "DIVIDE([Internet Distinct Count Sales Order Previous Year Growth],[Internet Distinct Count Sales Order Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Month To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Distinct Count Sales Order],DATESMTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Month To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Distinct Count Sales Order],DATESMTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Month To Date Previous Year Growth",
+            "expression": "[Internet Distinct Count Sales Order Month To Date] - [Internet Distinct Count Sales Order Month To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Month To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Distinct Count Sales Order Month To Date Previous Year Growth],[Internet Distinct Count Sales Order Month To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Quarter To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Distinct Count Sales Order],DATESQTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Quarter To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Distinct Count Sales Order],DATESQTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Quarter To Date Previous Year Growth",
+            "expression": "[Internet Distinct Count Sales Order Quarter To Date] - [Internet Distinct Count Sales Order Quarter To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Quarter To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Distinct Count Sales Order Quarter To Date Previous Year Growth],[Internet Distinct Count Sales Order Quarter To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order 12 MAT",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Distinct Count Sales Order],DATESINPERIOD('Date'[Date],LASTDATE('Date'[Date]), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order 12 MAT Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Distinct Count Sales Order],DATESINPERIOD('Date'[Date],DATEADD (LASTDATE( 'Date'[Date]),-1, YEAR), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order 12 MAT Previous Year Growth",
+            "expression": "[Internet Distinct Count Sales Order Quarter To Date] - [Internet Distinct Count Sales Order 12 MAT Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order 12 MAT Previous Year Growth%",
+            "expression": "DIVIDE([Internet Distinct Count Sales Order 12 MAT Previous Year Growth],[Internet Distinct Count Sales Order 12 MAT Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Last 4 Weeks",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Distinct Count Sales Order],DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Last 4 Weeks Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Distinct Count Sales Order],DATESINPERIOD('Date'[Date], DATEADD(LASTDATE('Date'[Date]), -364, DAY), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Last 4 Weeks Previous Year Growth",
+            "expression": "[Internet Distinct Count Sales Order Quarter To Date] - [Internet Distinct Count Sales Order Last 4 Weeks Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Distinct Count Sales Order Last 4 Weeks Previous Year Growth%",
+            "expression": "DIVIDE([Internet Distinct Count Sales Order 12 MAT Previous Year Growth],[Internet Distinct Count Sales Order Last 4 Weeks Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Order Lines Count Year To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Order Lines Count],DATESYTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Order Lines Count Year To Date PY",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Order Lines Count],DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Order Lines Count Year To Date Previous Year Growth",
+            "expression": "[Internet Order Lines Count Year To Date] - [Internet Order Lines Count Year To Date PY]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Order Lines Count Year To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Order Lines Count Year To Date Previous Year Growth],[Internet Order Lines Count Year To Date PY])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Order Lines Count Previous Year",
+            "expression": "CALCULATE([Internet Order Lines Count],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Order Lines Count Previous Year Growth",
+            "expression": "[Internet Order Lines Count] - [Internet Order Lines Count Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Order Lines Count Previous Year Growth%",
+            "expression": "DIVIDE([Internet Order Lines Count Previous Year Growth],[Internet Order Lines Count Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Order Lines Count Previous Year Same WeekDay",
+            "expression": "CALCULATE([Internet Order Lines Count],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Order Lines Count Previous Year Same WeekDay Growth",
+            "expression": "[Internet Order Lines Count] - [Internet Order Lines Count Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Order Lines Count Previous Year Same WeekDay Growth%",
+            "expression": "DIVIDE([Internet Order Lines Count Previous Year Growth],[Internet Order Lines Count Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Order Lines Count Month To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Order Lines Count],DATESMTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Order Lines Count Month To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Order Lines Count],DATESMTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Order Lines Count Month To Date Previous Year Growth",
+            "expression": "[Internet Order Lines Count Month To Date] - [Internet Order Lines Count Month To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Order Lines Count Month To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Order Lines Count Month To Date Previous Year Growth],[Internet Order Lines Count Month To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Order Lines Count Quarter To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Order Lines Count],DATESQTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Order Lines Count Quarter To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Order Lines Count],DATESQTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Order Lines Count Quarter To Date Previous Year Growth",
+            "expression": "[Internet Order Lines Count Quarter To Date] - [Internet Order Lines Count Quarter To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Order Lines Count Quarter To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Order Lines Count Quarter To Date Previous Year Growth],[Internet Order Lines Count Quarter To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Order Lines Count 12 MAT",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Order Lines Count],DATESINPERIOD('Date'[Date],LASTDATE('Date'[Date]), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Order Lines Count 12 MAT Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Order Lines Count],DATESINPERIOD('Date'[Date],DATEADD (LASTDATE( 'Date'[Date]),-1, YEAR), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Order Lines Count 12 MAT Previous Year Growth",
+            "expression": "[Internet Order Lines Count Quarter To Date] - [Internet Order Lines Count 12 MAT Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Order Lines Count 12 MAT Previous Year Growth%",
+            "expression": "DIVIDE([Internet Order Lines Count 12 MAT Previous Year Growth],[Internet Order Lines Count 12 MAT Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Order Lines Count Last 4 Weeks",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Order Lines Count],DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Order Lines Count Last 4 Weeks Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Order Lines Count],DATESINPERIOD('Date'[Date], DATEADD(LASTDATE('Date'[Date]), -364, DAY), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Order Lines Count Last 4 Weeks Previous Year Growth",
+            "expression": "[Internet Order Lines Count Quarter To Date] - [Internet Order Lines Count Last 4 Weeks Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Order Lines Count Last 4 Weeks Previous Year Growth%",
+            "expression": "DIVIDE([Internet Order Lines Count 12 MAT Previous Year Growth],[Internet Order Lines Count Last 4 Weeks Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Units Year To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Units],DATESYTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Units Year To Date PY",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Units],DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Units Year To Date Previous Year Growth",
+            "expression": "[Internet Total Units Year To Date] - [Internet Total Units Year To Date PY]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Units Year To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Units Year To Date Previous Year Growth],[Internet Total Units Year To Date PY])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Units Previous Year",
+            "expression": "CALCULATE([Internet Total Units],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Units Previous Year Growth",
+            "expression": "[Internet Total Units] - [Internet Total Units Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Units Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Units Previous Year Growth],[Internet Total Units Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Units Previous Year Same WeekDay",
+            "expression": "CALCULATE([Internet Total Units],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Units Previous Year Same WeekDay Growth",
+            "expression": "[Internet Total Units] - [Internet Total Units Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Units Previous Year Same WeekDay Growth%",
+            "expression": "DIVIDE([Internet Total Units Previous Year Growth],[Internet Total Units Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Units Month To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Units],DATESMTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Units Month To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Units],DATESMTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Units Month To Date Previous Year Growth",
+            "expression": "[Internet Total Units Month To Date] - [Internet Total Units Month To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Units Month To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Units Month To Date Previous Year Growth],[Internet Total Units Month To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Units Quarter To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Units],DATESQTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Units Quarter To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Units],DATESQTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Units Quarter To Date Previous Year Growth",
+            "expression": "[Internet Total Units Quarter To Date] - [Internet Total Units Quarter To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Units Quarter To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Units Quarter To Date Previous Year Growth],[Internet Total Units Quarter To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Units 12 MAT",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Units],DATESINPERIOD('Date'[Date],LASTDATE('Date'[Date]), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Units 12 MAT Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Units],DATESINPERIOD('Date'[Date],DATEADD (LASTDATE( 'Date'[Date]),-1, YEAR), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Units 12 MAT Previous Year Growth",
+            "expression": "[Internet Total Units Quarter To Date] - [Internet Total Units 12 MAT Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Units 12 MAT Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Units 12 MAT Previous Year Growth],[Internet Total Units 12 MAT Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Units Last 4 Weeks",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Units],DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Units Last 4 Weeks Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Units],DATESINPERIOD('Date'[Date], DATEADD(LASTDATE('Date'[Date]), -364, DAY), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Units Last 4 Weeks Previous Year Growth",
+            "expression": "[Internet Total Units Quarter To Date] - [Internet Total Units Last 4 Weeks Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Units Last 4 Weeks Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Units 12 MAT Previous Year Growth],[Internet Total Units Last 4 Weeks Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Discount Amount Year To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Discount Amount],DATESYTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Discount Amount Year To Date PY",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Discount Amount],DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Discount Amount Year To Date Previous Year Growth",
+            "expression": "[Internet Total Discount Amount Year To Date] - [Internet Total Discount Amount Year To Date PY]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Discount Amount Year To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Discount Amount Year To Date Previous Year Growth],[Internet Total Discount Amount Year To Date PY])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Discount Amount Previous Year",
+            "expression": "CALCULATE([Internet Total Discount Amount],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Discount Amount Previous Year Growth",
+            "expression": "[Internet Total Discount Amount] - [Internet Total Discount Amount Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Discount Amount Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Discount Amount Previous Year Growth],[Internet Total Discount Amount Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Discount Amount Previous Year Same WeekDay",
+            "expression": "CALCULATE([Internet Total Discount Amount],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Discount Amount Previous Year Same WeekDay Growth",
+            "expression": "[Internet Total Discount Amount] - [Internet Total Discount Amount Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Discount Amount Previous Year Same WeekDay Growth%",
+            "expression": "DIVIDE([Internet Total Discount Amount Previous Year Growth],[Internet Total Discount Amount Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Discount Amount Month To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Discount Amount],DATESMTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Discount Amount Month To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Discount Amount],DATESMTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Discount Amount Month To Date Previous Year Growth",
+            "expression": "[Internet Total Discount Amount Month To Date] - [Internet Total Discount Amount Month To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Discount Amount Month To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Discount Amount Month To Date Previous Year Growth],[Internet Total Discount Amount Month To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Discount Amount Quarter To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Discount Amount],DATESQTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Discount Amount Quarter To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Discount Amount],DATESQTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Discount Amount Quarter To Date Previous Year Growth",
+            "expression": "[Internet Total Discount Amount Quarter To Date] - [Internet Total Discount Amount Quarter To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Discount Amount Quarter To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Discount Amount Quarter To Date Previous Year Growth],[Internet Total Discount Amount Quarter To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Discount Amount 12 MAT",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Discount Amount],DATESINPERIOD('Date'[Date],LASTDATE('Date'[Date]), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Discount Amount 12 MAT Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Discount Amount],DATESINPERIOD('Date'[Date],DATEADD (LASTDATE( 'Date'[Date]),-1, YEAR), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Discount Amount 12 MAT Previous Year Growth",
+            "expression": "[Internet Total Discount Amount Quarter To Date] - [Internet Total Discount Amount 12 MAT Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Discount Amount 12 MAT Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Discount Amount 12 MAT Previous Year Growth],[Internet Total Discount Amount 12 MAT Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Discount Amount Last 4 Weeks",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Discount Amount],DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Discount Amount Last 4 Weeks Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Discount Amount],DATESINPERIOD('Date'[Date], DATEADD(LASTDATE('Date'[Date]), -364, DAY), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Discount Amount Last 4 Weeks Previous Year Growth",
+            "expression": "[Internet Total Discount Amount Quarter To Date] - [Internet Total Discount Amount Last 4 Weeks Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Discount Amount Last 4 Weeks Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Discount Amount 12 MAT Previous Year Growth],[Internet Total Discount Amount Last 4 Weeks Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Product Cost Year To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Product Cost],DATESYTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Product Cost Year To Date PY",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Product Cost],DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Product Cost Year To Date Previous Year Growth",
+            "expression": "[Internet Total Product Cost Year To Date] - [Internet Total Product Cost Year To Date PY]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Product Cost Year To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Product Cost Year To Date Previous Year Growth],[Internet Total Product Cost Year To Date PY])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Product Cost Previous Year",
+            "expression": "CALCULATE([Internet Total Product Cost],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Product Cost Previous Year Growth",
+            "expression": "[Internet Total Product Cost] - [Internet Total Product Cost Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Product Cost Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Product Cost Previous Year Growth],[Internet Total Product Cost Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Product Cost Previous Year Same WeekDay",
+            "expression": "CALCULATE([Internet Total Product Cost],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Product Cost Previous Year Same WeekDay Growth",
+            "expression": "[Internet Total Product Cost] - [Internet Total Product Cost Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Product Cost Previous Year Same WeekDay Growth%",
+            "expression": "DIVIDE([Internet Total Product Cost Previous Year Growth],[Internet Total Product Cost Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Product Cost Month To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Product Cost],DATESMTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Product Cost Month To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Product Cost],DATESMTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Product Cost Month To Date Previous Year Growth",
+            "expression": "[Internet Total Product Cost Month To Date] - [Internet Total Product Cost Month To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Product Cost Month To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Product Cost Month To Date Previous Year Growth],[Internet Total Product Cost Month To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Product Cost Quarter To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Product Cost],DATESQTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Product Cost Quarter To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Product Cost],DATESQTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Product Cost Quarter To Date Previous Year Growth",
+            "expression": "[Internet Total Product Cost Quarter To Date] - [Internet Total Product Cost Quarter To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Product Cost Quarter To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Product Cost Quarter To Date Previous Year Growth],[Internet Total Product Cost Quarter To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Product Cost 12 MAT",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Product Cost],DATESINPERIOD('Date'[Date],LASTDATE('Date'[Date]), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Product Cost 12 MAT Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Product Cost],DATESINPERIOD('Date'[Date],DATEADD (LASTDATE( 'Date'[Date]),-1, YEAR), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Product Cost 12 MAT Previous Year Growth",
+            "expression": "[Internet Total Product Cost Quarter To Date] - [Internet Total Product Cost 12 MAT Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Product Cost 12 MAT Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Product Cost 12 MAT Previous Year Growth],[Internet Total Product Cost 12 MAT Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Product Cost Last 4 Weeks",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Product Cost],DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Product Cost Last 4 Weeks Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Product Cost],DATESINPERIOD('Date'[Date], DATEADD(LASTDATE('Date'[Date]), -364, DAY), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Product Cost Last 4 Weeks Previous Year Growth",
+            "expression": "[Internet Total Product Cost Quarter To Date] - [Internet Total Product Cost Last 4 Weeks Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Product Cost Last 4 Weeks Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Product Cost 12 MAT Previous Year Growth],[Internet Total Product Cost Last 4 Weeks Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Sales Year To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Sales],DATESYTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Sales Year To Date PY",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Sales],DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Sales Year To Date Previous Year Growth",
+            "expression": "[Internet Total Sales Year To Date] - [Internet Total Sales Year To Date PY]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Sales Year To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Sales Year To Date Previous Year Growth],[Internet Total Sales Year To Date PY])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Sales Previous Year",
+            "expression": "CALCULATE([Internet Total Sales],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Sales Previous Year Growth",
+            "expression": "[Internet Total Sales] - [Internet Total Sales Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Sales Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Sales Previous Year Growth],[Internet Total Sales Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Sales Previous Year Same WeekDay",
+            "expression": "CALCULATE([Internet Total Sales],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Sales Previous Year Same WeekDay Growth",
+            "expression": "[Internet Total Sales] - [Internet Total Sales Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Sales Previous Year Same WeekDay Growth%",
+            "expression": "DIVIDE([Internet Total Sales Previous Year Growth],[Internet Total Sales Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Sales Month To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Sales],DATESMTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Sales Month To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Sales],DATESMTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Sales Month To Date Previous Year Growth",
+            "expression": "[Internet Total Sales Month To Date] - [Internet Total Sales Month To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Sales Month To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Sales Month To Date Previous Year Growth],[Internet Total Sales Month To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Sales Quarter To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Sales],DATESQTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Sales Quarter To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Sales],DATESQTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Sales Quarter To Date Previous Year Growth",
+            "expression": "[Internet Total Sales Quarter To Date] - [Internet Total Sales Quarter To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Sales Quarter To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Sales Quarter To Date Previous Year Growth],[Internet Total Sales Quarter To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Sales 12 MAT",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Sales],DATESINPERIOD('Date'[Date],LASTDATE('Date'[Date]), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Sales 12 MAT Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Sales],DATESINPERIOD('Date'[Date],DATEADD (LASTDATE( 'Date'[Date]),-1, YEAR), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Sales 12 MAT Previous Year Growth",
+            "expression": "[Internet Total Sales Quarter To Date] - [Internet Total Sales 12 MAT Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Sales 12 MAT Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Sales 12 MAT Previous Year Growth],[Internet Total Sales 12 MAT Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Sales Last 4 Weeks",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Sales],DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Sales Last 4 Weeks Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Sales],DATESINPERIOD('Date'[Date], DATEADD(LASTDATE('Date'[Date]), -364, DAY), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Sales Last 4 Weeks Previous Year Growth",
+            "expression": "[Internet Total Sales Quarter To Date] - [Internet Total Sales Last 4 Weeks Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Sales Last 4 Weeks Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Sales 12 MAT Previous Year Growth],[Internet Total Sales Last 4 Weeks Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Margin Year To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Margin],DATESYTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Margin Year To Date PY",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Margin],DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Margin Year To Date Previous Year Growth",
+            "expression": "[Internet Total Margin Year To Date] - [Internet Total Margin Year To Date PY]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Margin Year To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Margin Year To Date Previous Year Growth],[Internet Total Margin Year To Date PY])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Margin Previous Year",
+            "expression": "CALCULATE([Internet Total Margin],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Margin Previous Year Growth",
+            "expression": "[Internet Total Margin] - [Internet Total Margin Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Margin Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Margin Previous Year Growth],[Internet Total Margin Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Margin Previous Year Same WeekDay",
+            "expression": "CALCULATE([Internet Total Margin],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Margin Previous Year Same WeekDay Growth",
+            "expression": "[Internet Total Margin] - [Internet Total Margin Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Margin Previous Year Same WeekDay Growth%",
+            "expression": "DIVIDE([Internet Total Margin Previous Year Growth],[Internet Total Margin Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Margin Month To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Margin],DATESMTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Margin Month To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Margin],DATESMTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Margin Month To Date Previous Year Growth",
+            "expression": "[Internet Total Margin Month To Date] - [Internet Total Margin Month To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Margin Month To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Margin Month To Date Previous Year Growth],[Internet Total Margin Month To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Margin Quarter To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Margin],DATESQTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Margin Quarter To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Margin],DATESQTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Margin Quarter To Date Previous Year Growth",
+            "expression": "[Internet Total Margin Quarter To Date] - [Internet Total Margin Quarter To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Margin Quarter To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Margin Quarter To Date Previous Year Growth],[Internet Total Margin Quarter To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Margin 12 MAT",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Margin],DATESINPERIOD('Date'[Date],LASTDATE('Date'[Date]), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Margin 12 MAT Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Margin],DATESINPERIOD('Date'[Date],DATEADD (LASTDATE( 'Date'[Date]),-1, YEAR), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Margin 12 MAT Previous Year Growth",
+            "expression": "[Internet Total Margin Quarter To Date] - [Internet Total Margin 12 MAT Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Margin 12 MAT Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Margin 12 MAT Previous Year Growth],[Internet Total Margin 12 MAT Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Margin Last 4 Weeks",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Margin],DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Margin Last 4 Weeks Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Margin],DATESINPERIOD('Date'[Date], DATEADD(LASTDATE('Date'[Date]), -364, DAY), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Margin Last 4 Weeks Previous Year Growth",
+            "expression": "[Internet Total Margin Quarter To Date] - [Internet Total Margin Last 4 Weeks Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Margin Last 4 Weeks Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Margin 12 MAT Previous Year Growth],[Internet Total Margin Last 4 Weeks Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Tax Amt Year To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Tax Amt],DATESYTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Tax Amt Year To Date PY",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Tax Amt],DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Tax Amt Year To Date Previous Year Growth",
+            "expression": "[Internet Total Tax Amt Year To Date] - [Internet Total Tax Amt Year To Date PY]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Tax Amt Year To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Tax Amt Year To Date Previous Year Growth],[Internet Total Tax Amt Year To Date PY])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Tax Amt Previous Year",
+            "expression": "CALCULATE([Internet Total Tax Amt],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Tax Amt Previous Year Growth",
+            "expression": "[Internet Total Tax Amt] - [Internet Total Tax Amt Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Tax Amt Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Tax Amt Previous Year Growth],[Internet Total Tax Amt Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Tax Amt Previous Year Same WeekDay",
+            "expression": "CALCULATE([Internet Total Tax Amt],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Tax Amt Previous Year Same WeekDay Growth",
+            "expression": "[Internet Total Tax Amt] - [Internet Total Tax Amt Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Tax Amt Previous Year Same WeekDay Growth%",
+            "expression": "DIVIDE([Internet Total Tax Amt Previous Year Growth],[Internet Total Tax Amt Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Tax Amt Month To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Tax Amt],DATESMTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Tax Amt Month To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Tax Amt],DATESMTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Tax Amt Month To Date Previous Year Growth",
+            "expression": "[Internet Total Tax Amt Month To Date] - [Internet Total Tax Amt Month To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Tax Amt Month To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Tax Amt Month To Date Previous Year Growth],[Internet Total Tax Amt Month To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Tax Amt Quarter To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Tax Amt],DATESQTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Tax Amt Quarter To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Tax Amt],DATESQTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Tax Amt Quarter To Date Previous Year Growth",
+            "expression": "[Internet Total Tax Amt Quarter To Date] - [Internet Total Tax Amt Quarter To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Tax Amt Quarter To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Tax Amt Quarter To Date Previous Year Growth],[Internet Total Tax Amt Quarter To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Tax Amt 12 MAT",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Tax Amt],DATESINPERIOD('Date'[Date],LASTDATE('Date'[Date]), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Tax Amt 12 MAT Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Tax Amt],DATESINPERIOD('Date'[Date],DATEADD (LASTDATE( 'Date'[Date]),-1, YEAR), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Tax Amt 12 MAT Previous Year Growth",
+            "expression": "[Internet Total Tax Amt Quarter To Date] - [Internet Total Tax Amt 12 MAT Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Tax Amt 12 MAT Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Tax Amt 12 MAT Previous Year Growth],[Internet Total Tax Amt 12 MAT Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Tax Amt Last 4 Weeks",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Tax Amt],DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Tax Amt Last 4 Weeks Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Tax Amt],DATESINPERIOD('Date'[Date], DATEADD(LASTDATE('Date'[Date]), -364, DAY), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Tax Amt Last 4 Weeks Previous Year Growth",
+            "expression": "[Internet Total Tax Amt Quarter To Date] - [Internet Total Tax Amt Last 4 Weeks Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Tax Amt Last 4 Weeks Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Tax Amt 12 MAT Previous Year Growth],[Internet Total Tax Amt Last 4 Weeks Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Freight Year To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Freight],DATESYTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Freight Year To Date PY",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Freight],DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Freight Year To Date Previous Year Growth",
+            "expression": "[Internet Total Freight Year To Date] - [Internet Total Freight Year To Date PY]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Freight Year To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Freight Year To Date Previous Year Growth],[Internet Total Freight Year To Date PY])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\YTD"
+          },
+          {
+            "name": "Internet Total Freight Previous Year",
+            "expression": "CALCULATE([Internet Total Freight],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Freight Previous Year Growth",
+            "expression": "[Internet Total Freight] - [Internet Total Freight Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Freight Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Freight Previous Year Growth],[Internet Total Freight Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY"
+          },
+          {
+            "name": "Internet Total Freight Previous Year Same WeekDay",
+            "expression": "CALCULATE([Internet Total Freight],SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Freight Previous Year Same WeekDay Growth",
+            "expression": "[Internet Total Freight] - [Internet Total Freight Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Freight Previous Year Same WeekDay Growth%",
+            "expression": "DIVIDE([Internet Total Freight Previous Year Growth],[Internet Total Freight Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\PY Same WeekDay"
+          },
+          {
+            "name": "Internet Total Freight Month To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Freight],DATESMTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Freight Month To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Freight],DATESMTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Freight Month To Date Previous Year Growth",
+            "expression": "[Internet Total Freight Month To Date] - [Internet Total Freight Month To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Freight Month To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Freight Month To Date Previous Year Growth],[Internet Total Freight Month To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\MTD"
+          },
+          {
+            "name": "Internet Total Freight Quarter To Date",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Freight],DATESQTD('Date'[Date]))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Freight Quarter To Date Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Freight],DATESQTD(SAMEPERIODLASTYEAR('Date'[Date])))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Freight Quarter To Date Previous Year Growth",
+            "expression": "[Internet Total Freight Quarter To Date] - [Internet Total Freight Quarter To Date Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Freight Quarter To Date Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Freight Quarter To Date Previous Year Growth],[Internet Total Freight Quarter To Date Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\QTD"
+          },
+          {
+            "name": "Internet Total Freight 12 MAT",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Freight],DATESINPERIOD('Date'[Date],LASTDATE('Date'[Date]), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Freight 12 MAT Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Freight],DATESINPERIOD('Date'[Date],DATEADD (LASTDATE( 'Date'[Date]),-1, YEAR), -1,YEAR) , ALL ('Date'))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Freight 12 MAT Previous Year Growth",
+            "expression": "[Internet Total Freight Quarter To Date] - [Internet Total Freight 12 MAT Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Freight 12 MAT Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Freight 12 MAT Previous Year Growth],[Internet Total Freight 12 MAT Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\12MAT"
+          },
+          {
+            "name": "Internet Total Freight Last 4 Weeks",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Freight],DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Freight Last 4 Weeks Previous Year",
+            "expression": [
+              "CALCULATE(",
+              "[Internet Total Freight],DATESINPERIOD('Date'[Date], DATEADD(LASTDATE('Date'[Date]), -364, DAY), -28, DAY))"
+            ],
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Freight Last 4 Weeks Previous Year Growth",
+            "expression": "[Internet Total Freight Quarter To Date] - [Internet Total Freight Last 4 Weeks Previous Year]",
+            "formatString": "#,0",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          },
+          {
+            "name": "Internet Total Freight Last 4 Weeks Previous Year Growth%",
+            "expression": "DIVIDE([Internet Total Freight 12 MAT Previous Year Growth],[Internet Total Freight Last 4 Weeks Previous Year])",
+            "formatString": "#,0.0%;-#,0.0%;#,0.0%",
+            "displayFolder": "\\Time Intelligence\\L4W"
+          }
+        ]
+      },
+      {
+        "name": "Time Intelligence",
+        "calculationGroup": {
+          "calculationItems": [
+            {
+              "name": "Current",
+              "expression": "SELECTEDMEASURE ()"
+            },
+            {
+              "name": "MTD",
+              "expression": "CALCULATE ( SELECTEDMEASURE (), DATESMTD ( 'Date'[Date]) )"
+            },
+            {
+              "name": "YTD",
+              "expression": "CALCULATE(SELECTEDMEASURE() , DATESYTD('Date'[Date]))"
+            },
+            {
+              "name": "PY",
+              "expression": "CALCULATE ( SELECTEDMEASURE (), SAMEPERIODLASTYEAR ( 'Date'[Date] ) )"
+            },
+            {
+              "name": "PY MTD",
+              "expression": [
+                "CALCULATE(SELECTEDMEASURE(),",
+                "   SAMEPERIODLASTYEAR('Date'[Date]),",
+                "   'TIme Intelligence'[Time Intelligence]=\"MTD\")"
+              ]
+            }
+          ]
+        },
+        "columns": [
+          {
+            "name": "Time Intelligence",
+            "dataType": "string"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "source": {
+              "type": "calculationGroup"
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "dfbe3bb6-e48e-4542-bd97-3b8e1edd856a",
+        "fromTable": "Customer",
+        "fromColumn": "GeographyKey",
+        "toTable": "Geography",
+        "toColumn": "GeographyKey"
+      },
+      {
+        "name": "38e938f7-e249-4791-9118-87e7e644ef3d",
+        "fromTable": "Product",
+        "fromColumn": "ProductSubcategoryKey",
+        "toTable": "Product Subcategory",
+        "toColumn": "Product Subcategory Key"
+      },
+      {
+        "name": "a6cafa4d-5900-4e01-836b-885eabecf2f9",
+        "fromTable": "Product Subcategory",
+        "fromColumn": "Product Category Key",
+        "toTable": "Product Category",
+        "toColumn": "ProductCategoryKey"
+      },
+      {
+        "name": "f4319516-6676-4c2d-af07-e16b493927b6",
+        "fromTable": "Internet Sales",
+        "fromColumn": "ProductKey",
+        "toTable": "Product",
+        "toColumn": "ProductKey"
+      },
+      {
+        "name": "fe5feaed-2ecf-423b-bd45-64cb473a631e",
+        "fromTable": "Internet Sales",
+        "fromColumn": "CustomerKey",
+        "toTable": "Customer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "c2ded87f-d431-40a7-8775-499a36a1c4bc",
+        "fromTable": "Internet Sales",
+        "fromColumn": "OrderDateKey",
+        "toTable": "Date",
+        "toColumn": "DateKey"
+      },
+      {
+        "name": "bb8cbd51-1372-480b-8453-3251de87f6c9",
+        "fromTable": "Internet Sales",
+        "fromColumn": "DueDateKey",
+        "toTable": "Date",
+        "toColumn": "DateKey",
+        "isActive": false
+      },
+      {
+        "name": "ada1eab4-c249-4f1c-80db-f11995fbad13",
+        "fromTable": "Internet Sales",
+        "fromColumn": "ShipDateKey",
+        "toTable": "Date",
+        "toColumn": "DateKey",
+        "isActive": false
+      }
+    ],
+    "annotations": [
+      {
+        "name": "TabularEditor_SerializeOptions",
+        "value": "{\"IgnoreInferredObjects\":true,\"IgnoreInferredProperties\":true,\"IgnoreTimestamps\":true,\"SplitMultilineStrings\":true,\"PrefixFilenames\":false,\"LocalTranslations\":false,\"LocalPerspectives\":false,\"LocalRelationships\":false,\"Levels\":[\"Data Sources\",\"Perspectives\",\"Relationships\",\"Roles\",\"Tables\",\"Tables/Columns\",\"Tables/Hierarchies\",\"Tables/Measures\",\"Tables/Partitions\",\"Translations\"]}"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+﻿DEFINE
+
+MEASURE 'Internet Sales'[test] =
+SUMX('Internet Sales',IF('Internet Sales'[SalesAmount] > 10,1,0))
+
+MEASURE 'Internet Sales'[test1] =
+SUMX(FILTER('Internet Sales','Internet Sales'[SalesAmount] > 10),1)
+
+
+EVALUATE
+  TOPN(
+    502,
+    SUMMARIZECOLUMNS(
+      ROLLUPADDISSUBTOTAL(Geography[EnglishCountryRegionName], "IsGrandTotalRowTotal"),
+     
+      "test", 'Internet Sales'[Test]
+    ),
+    [IsGrandTotalRowTotal],
+    0,
+    Geography[EnglishCountryRegionName],
+    1
+  )
+
+ORDER BY
+  [IsGrandTotalRowTotal] DESC, Geography[EnglishCountryRegionName]

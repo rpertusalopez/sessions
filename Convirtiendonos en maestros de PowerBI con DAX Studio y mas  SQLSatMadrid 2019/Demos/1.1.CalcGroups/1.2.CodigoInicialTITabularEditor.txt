@@ -1,0 +1,24 @@
+Custom Action
+
+foreach(var m in Selected.Measures)
+{
+    string nameMeasureYTD = m.Name + " Year To Date";
+    string nameMeasureYTDPY = m.Name + " Year To Date PY";
+    
+    m.Table.AddMeasure(
+    nameMeasureYTD,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESYTD('Date'[Date]))",
+    m.DisplayFolder + "\\Time Intelligence\\YTD"
+    );
+    
+    m.Table.AddMeasure(
+    nameMeasureYTDPY,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))",
+    m.DisplayFolder + "\\Time Intelligence\\YTD"
+    );
+}
+

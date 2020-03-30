@@ -1,0 +1,91 @@
+﻿DEFINE
+
+MEASURE 'Transaction'[test1] =
+SUMX('Transaction',IF('Transaction'[TransactionQuantity] > 3,1,0))
+
+MEASURE 'Transaction'[test] =
+SUMX(FILTER('Transaction','Transaction'[TransactionQuantity] > 3),1)
+
+MEASURE 'Transaction'[Sales Loss] =
+VAR SalesLossValue =
+    SUMX (
+        VALUES ( Shop[Company Code] ),
+        sumx (
+            VAR RelativeDate =
+                LASTDATE ( 'Date'[Date] )
+            VAR ItemsInScope =
+                CALCULATETABLE (
+                    DISTINCT ( Stock[LocalItemId] ),
+                    TREATAS ( DATESMTD ( RelativeDate ), 'Date'[Date] ),
+                    FILTER ( ALL ( 'Abc' ), 'Abc'[Abc Company Segmentation Code] IN { "A", "B" } ),
+                    FILTER( VALUES('DC Item Status'), 'DC Item Status'[FinalDCStatus] = "ACTIVE"),
+                    FILTER( VALUES('ItemStatus'), 'ItemStatus'[FinalStoreStatus] = "ACTIVE"),
+                    FILTER( All(Shop[Sales Channel Desc]), Shop[Sales Channel Desc] = "Clearance/ Staff Shops" ||
+Shop[Sales Channel Desc] = "Warehouse" ||
+Shop[Sales Channel Desc] = "Wholesale") 
+                )
+            RETURN
+            FILTER (
+                ADDCOLUMNS (
+                    CALCULATETABLE (
+                        VALUES ( 'Local Item'[LocalItemId] ),
+                        TREATAS ( ItemsInScope, 'Local Item'[LocalItemId] )
+                    ),
+                    "StockQty", CALCULATE (
+                        SUM ( Stock[StockQuantity] ),
+                        TREATAS ( DATESMTD ( RelativeDate ), 'Date'[Date] )
+                    ),
+                    "SalesQty", CALCULATE (
+                        SUM ( 'Transaction'[TransactionQuantity] ),
+                        TREATAS (
+                            DATESINPERIOD ( 'Date'[Date], RelativeDate, -3, MONTH ),
+                            'Date'[Date]
+                        )
+                    ),
+                    "SalesQty6M", CALCULATE (
+                        SUM ( 'Transaction'[TransactionQuantity] ),
+                        TREATAS (
+                            DATESINPERIOD ( 'Date'[Date], RelativeDate, -6, MONTH ),
+                            'Date'[Date]
+                        )
+                    ),
+                    "SalesValuePreviouslyClosedMonth", CALCULATE (
+                        [Net Value],
+                        TREATAS (
+                            DATESBETWEEN('Date'[Date],STARTOFMONTH(DATEADD(LASTDATE ( 'Date'[Date] ), -1, month)), ENDOFMONTH(DATEADD(LASTDATE ( 'Date'[Date] ), -1, month))),
+                            'Date'[Date]
+                        ) 
+                    ),
+                    "CountDaysPreviouslyClosedMonth",CALCULATE(countrows(DATESBETWEEN('Date'[Date],STARTOFMONTH(DATEADD(LASTDATE ( 'Date'[Date] ), -1, month)), ENDOFMONTH(DATEADD(LASTDATE ( 'Date'[Date] ), -1, month))))),
+                    "CountDaysInFilterContext",CALCULATE(countrows(DATESBETWEEN('Date'[Date],FIRSTDATE ( 'Date'[Date] ), LASTDATE ( 'Date'[Date] ))))
+                ), 
+                [SalesQty6M] > 0 && ([StockQty] < 2 || [StockQty] / [SalesQty] * 90 < max(Shop[StockCoverageThreshold]))
+            ),
+            [SalesValuePreviouslyClosedMonth] * ([CountDaysInFilterContext]/[CountDaysPreviouslyClosedMonth])
+        )
+    )
+
+return 
+SalesLossValue
+
+ 
+ 
+VAR __DS0FilterTable = 
+  TREATAS({201909}, 'Date'[Month Code])
+
+EVALUATE
+  TOPN(
+    502,
+    SUMMARIZECOLUMNS(
+      ROLLUPADDISSUBTOTAL('Shop'[Company Desc], "IsGrandTotalRowTotal"),
+      __DS0FilterTable,
+      "test", 'Transaction'[Sales Loss]
+    ),
+    [IsGrandTotalRowTotal],
+    0,
+    'Shop'[Company Desc],
+    1
+  )
+
+ORDER BY
+  [IsGrandTotalRowTotal] DESC, 'Shop'[Company Desc]

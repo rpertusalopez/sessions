@@ -1,0 +1,62 @@
+{
+  "FileFormatVersion": 1,
+  "StorageEngineDuration": 5,
+  "StorageEngineDurationPercentage": 0.0,
+  "FormulaEngineDuration": 25,
+  "FormulaEngineDurationPercentage": 0.0,
+  "StoreageEngineEvents": [
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"DENSE\";\r\nWITH\r\n\t$Expr0 := [CallbackDataID ( IF ( 'Internet Sales'[SalesAmount]] > 10,1,0 )  ) ] ( PFDATAID ( 'FactInternetSales'[SalesAmount] )  ) \r\nSELECT\r\n'DimGeography'[EnglishCountryRegionName],\r\nSUM ( @$Expr0 ), COUNT () \r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey];\r\n",
+      "Duration": 4,
+      "CpuTime": 0,
+      "RowNumber": 1,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": true,
+      "QueryRichText": "SET DC_KIND=\"DENSE\";\r\nWITH\r\n\t$Expr0 := [|~S~|CallbackDataID|~E~| ( IF ( 'Internet Sales'[SalesAmount]] > 10,1,0 )  ) ] ( PFDATAID ( 'FactInternetSales'[SalesAmount] )  ) \r\nSELECT\r\n'DimGeography'[EnglishCountryRegionName],\r\nSUM ( @$Expr0 ), COUNT () \r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey];\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nWITH\r\n\t$Expr0 := [CallbackDataID ( IF ( 'Internet Sales'[SalesAmount]] > 10,1,0 )  ) ] ( PFDATAID ( 'FactInternetSales'[SalesAmount] )  ) \r\nSELECT\r\n'DimGeography'[EnglishCountryRegionName],\r\nSUM ( @$Expr0 )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey];\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 9, 144'\r\n",
+      "Duration": 4,
+      "CpuTime": 0,
+      "RowNumber": 2,
+      "EstimatedRows": 9,
+      "EstimatedKBytes": 1,
+      "HighlightQuery": true,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nWITH\r\n\t$Expr0 := [|~S~|CallbackDataID|~E~| ( IF ( 'Internet Sales'[SalesAmount]] > 10,1,0 )  ) ] ( PFDATAID ( 'FactInternetSales'[SalesAmount] )  ) \r\nSELECT\r\n'DimGeography'[EnglishCountryRegionName],\r\nSUM ( @$Expr0 )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey];\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 9, 144'\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"DENSE\";\r\nWITH\r\n\t$Expr0 := [CallbackDataID ( IF ( 'Internet Sales'[SalesAmount]] > 10,1,0 )  ) ] ( PFDATAID ( 'FactInternetSales'[SalesAmount] )  ) \r\nSELECT\r\nSUM ( @$Expr0 ), COUNT () \r\nFROM 'FactInternetSales';\r\n",
+      "Duration": 1,
+      "CpuTime": 0,
+      "RowNumber": 3,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": true,
+      "QueryRichText": "SET DC_KIND=\"DENSE\";\r\nWITH\r\n\t$Expr0 := [|~S~|CallbackDataID|~E~| ( IF ( 'Internet Sales'[SalesAmount]] > 10,1,0 )  ) ] ( PFDATAID ( 'FactInternetSales'[SalesAmount] )  ) \r\nSELECT\r\nSUM ( @$Expr0 ), COUNT () \r\nFROM 'FactInternetSales';\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nWITH\r\n\t$Expr0 := [CallbackDataID ( IF ( 'Internet Sales'[SalesAmount]] > 10,1,0 )  ) ] ( PFDATAID ( 'FactInternetSales'[SalesAmount] )  ) \r\nSELECT\r\nSUM ( @$Expr0 )\r\nFROM 'FactInternetSales';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 1, 16'\r\n",
+      "Duration": 1,
+      "CpuTime": 0,
+      "RowNumber": 4,
+      "EstimatedRows": 1,
+      "EstimatedKBytes": 1,
+      "HighlightQuery": true,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nWITH\r\n\t$Expr0 := [|~S~|CallbackDataID|~E~| ( IF ( 'Internet Sales'[SalesAmount]] > 10,1,0 )  ) ] ( PFDATAID ( 'FactInternetSales'[SalesAmount] )  ) \r\nSELECT\r\nSUM ( @$Expr0 )\r\nFROM 'FactInternetSales';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 1, 16'\r\n"
+    }
+  ],
+  "StorageEngineCpu": 0,
+  "TotalDuration": 30,
+  "StorageEngineQueryCount": 2,
+  "VertipaqCacheMatches": 0,
+  "TotalCpuDuration": 31
+}

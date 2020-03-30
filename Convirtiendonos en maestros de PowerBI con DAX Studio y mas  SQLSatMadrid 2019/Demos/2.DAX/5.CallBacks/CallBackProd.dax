@@ -1,0 +1,27 @@
+﻿DEFINE
+
+MEASURE 'Transaction'[test1] =
+SUMX('Transaction',IF('Transaction'[TransactionQuantity] > 3,1,0))
+
+MEASURE 'Transaction'[test] =
+SUMX(FILTER('Transaction','Transaction'[TransactionQuantity] > 3),1)
+
+VAR __DS0FilterTable = 
+  TREATAS({201909}, 'Date'[Month Code])
+
+EVALUATE
+  TOPN(
+    502,
+    SUMMARIZECOLUMNS(
+      ROLLUPADDISSUBTOTAL('Shop'[Company Desc], "IsGrandTotalRowTotal"),
+      __DS0FilterTable,
+      "test", 'Transaction'[Test]
+    ),
+    [IsGrandTotalRowTotal],
+    0,
+    'Shop'[Company Desc],
+    1
+  )
+
+ORDER BY
+  [IsGrandTotalRowTotal] DESC, 'Shop'[Company Desc]
