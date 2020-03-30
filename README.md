@@ -4,6 +4,18 @@ Recopilación de mis sesiones, junto con materiales, videos y ppts. Más detalle
 
 *Todos los datos utilizados en las demostraciones son de carácter educativo. Está terminantemente prohibido el uso comercial de los mismos.*
 
+## SQLSaturday Madrid 2019 - Convirtiéndonos en masters de PowerBI con DAX Studio y más. Del desarrollo al Performance Tuning.
+
+[Materiales]()
+
+Con la presión de los entornos Enterprise, las herramientas actuales como Visual Studio o PowerBI Desktop, se pueden llegar a quedar cortas a la hora de automatizar tareas de desarrollo de PowerBI y agilizar el análisis de rendimiento.
+
+Durante esta sesión trabajaremos con diferentes herramientas como DAX Studio, Tabular Editor y Vertipaq Analyzer para convertirnos en unos masters de PowerBI.
+Conocimiento que nos permitirá introducirnos en el mundo del Performance Tuning, mejorando el rendimiento de nuestras consultas DAX en PowerBI.
+
+Además, compartiremos ejemplos de casos prácticos y experiencias reales en entornos de gran volumen de datos.
+
+
 ## Microsoft TechSummit 2016 - Power BI y Cortana Analytics de 0 a 100
 [Blog + Video](http://www.rpertusa.com)
 
