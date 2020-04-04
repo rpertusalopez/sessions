@@ -1,0 +1,16 @@
+﻿// DAX Query
+EVALUATE
+  TOPN(
+    501,
+    SUMMARIZECOLUMNS(
+      'Geography'[StateProvinceName],
+      "Total_Sales_Amount", 'Internet Sales'[Total Sales Amount],
+      --"US_Sales_1", 'Internet Sales'[US Sales 1]
+      "US_Sales_2", 'Internet Sales'[US Sales 2]
+    ),
+    'Geography'[StateProvinceName],
+    1
+  )
+
+ORDER BY
+  'Geography'[StateProvinceName]

@@ -1,0 +1,72 @@
+﻿// DAX Query
+DEFINE
+  
+---- MODEL MEASURES BEGIN ----
+MEASURE 'Internet Sales'[Total Sales YTD 1] = 
+CALCULATE (
+[Total Sales Amount],
+FILTER (
+ALL ( 'Date' ),
+'Date'[CalendarYear] = MAX ( 'Date'[CalendarYear] )
+&& 'Date'[Date] <= MAX ( 'Date'[Date] )
+)
+)
+
+MEASURE 'Internet Sales'[Total Sales YTD 2] =
+VAR MaxDate = LASTDATE( 'Date'[Date] )
+
+RETURN CALCULATE (
+[Total Sales Amount],
+FILTER (
+ALL ( 'Date' ),
+'Date'[CalendarYear] = MAX ( 'Date'[CalendarYear] )
+&& 'Date'[Date] <= MaxDate
+)
+)
+
+
+
+MEASURE 'Internet Sales'[Total Sales YTD 3] = 
+VAR MaxDate = LASTDATE( 'Date'[Date] )
+VAR ListDays = DATESBETWEEN('Date'[Date],STARTOFYEAR(MaxDate),MaxDate)
+VAR FinalTable = CALCULATE (
+[Total Sales Amount],
+ListDays
+)
+RETURN FinalTable
+
+
+MEASURE 'Internet Sales'[Total Sales YTD 4] = 
+CALCULATE([Total Sales Amount],DATESYTD('Date'[Date]))
+
+---- MODEL MEASURES END ----
+
+VAR __DS0FilterTable = 
+    TREATAS({"Multi",
+      "NA",
+      "Silver",
+      "Blue"}, 'Product'[Color])
+
+  VAR __DS0FilterTable2 = 
+    TREATAS({"M"}, 'Customer'[Gender])
+
+EVALUATE
+  TOPN(
+    502,
+    SUMMARIZECOLUMNS(
+        'Date'[CalendarYear],'Date'[MonthNumberOfYear]
+      ,
+      __DS0FilterTable,
+      __DS0FilterTable2,
+      "Total_Sales_YTD", 'Internet Sales'[Total Sales YTD 1]
+    ),
+    
+    'Date'[CalendarYear],
+    1,
+    'Date'[MonthNumberOfYear],
+    1
+  )
+
+ORDER BY
+  'Date'[CalendarYear],
+  'Date'[MonthNumberOfYear]

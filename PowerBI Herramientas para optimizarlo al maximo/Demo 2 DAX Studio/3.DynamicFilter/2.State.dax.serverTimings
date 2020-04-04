@@ -1,0 +1,122 @@
+{
+  "FileFormatVersion": 1,
+  "StorageEngineDuration": 6,
+  "StorageEngineDurationPercentage": 0.0,
+  "FormulaEngineDuration": 11,
+  "FormulaEngineDurationPercentage": 0.0,
+  "StoreageEngineEvents": [
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'DimGeography'[City],\r\nSUM ( 'FactInternetSales'[SalesAmount] ), COUNT () \r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey];\r\n",
+      "Duration": 2,
+      "CpuTime": 0,
+      "RowNumber": 1,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"DENSE\";\r\nSELECT\r\n'DimGeography'[City],\r\nSUM ( 'FactInternetSales'[SalesAmount] ), COUNT () \r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey];\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimGeography'[City],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey];\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 565, 9040'\r\n",
+      "Duration": 2,
+      "CpuTime": 0,
+      "RowNumber": 2,
+      "EstimatedRows": 565,
+      "EstimatedKBytes": 9,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimGeography'[City],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey];\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 565, 9040'\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"C32\";\r\nDEFINE TABLE '$TTable3' := SELECT\r\n'DimGeography'[GeographyKey], 'DimGeography'[City]\r\nFROM 'DimGeography'\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States';\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 3,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"C32\";\r\nDEFINE TABLE '$TTable3' := SELECT\r\n'DimGeography'[GeographyKey], 'DimGeography'[City]\r\nFROM 'DimGeography'\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States';\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nDEFINE TABLE '$TTable3' := SELECT\r\n'DimGeography'[GeographyKey], 'DimGeography'[City]\r\nFROM 'DimGeography'\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 376, 1504'\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 4,
+      "EstimatedRows": 376,
+      "EstimatedKBytes": 2,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nDEFINE TABLE '$TTable3' := SELECT\r\n'DimGeography'[GeographyKey], 'DimGeography'[City]\r\nFROM 'DimGeography'\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 376, 1504'\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"SIBMP\";\r\nDEFINE TABLE '$TTable4' := SELECT\r\nSIMPLEINDEXN ( '$TTable3'[DimGeography$GeographyKey] )\r\nFROM '$TTable3';\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 5,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"SIBMP\";\r\nDEFINE TABLE '$TTable4' := SELECT\r\nSIMPLEINDEXN ( '$TTable3'[DimGeography$GeographyKey] )\r\nFROM '$TTable3';\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nDEFINE TABLE '$TTable4' := SELECT\r\nSIMPLEINDEXN ( '$TTable3'[DimGeography$GeographyKey] )\r\nFROM '$TTable3';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 704, 88'\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 6,
+      "EstimatedRows": 704,
+      "EstimatedKBytes": 1,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nDEFINE TABLE '$TTable4' := SELECT\r\nSIMPLEINDEXN ( '$TTable3'[DimGeography$GeographyKey] )\r\nFROM '$TTable3';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 704, 88'\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 180,
+      "Query": "SET DC_KIND=\"C32\";\r\nDEFINE TABLE '$TTable1' := SELECT\r\n'$TTable3'[DimGeography$City],\r\nSUM ( '$TTable2'[$Measure0] )\r\nFROM '$TTable2'\r\n\tINNER JOIN '$TTable3' ON '$TTable2'[DimGeography$GeographyKey]='$TTable3'[DimGeography$GeographyKey]\r\nREDUCED BY\r\n'$TTable2' := SELECT\r\n'DimGeography'[GeographyKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey]\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States' VAND\r\n\t'DimGeography'[GeographyKey] ININDEX '$TTable4'[$SemijoinProjection];\r\n",
+      "Duration": 3,
+      "CpuTime": 0,
+      "RowNumber": 7,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"C32\";\r\nDEFINE TABLE '$TTable1' := SELECT\r\n'$TTable3'[DimGeography$City],\r\nSUM ( '$TTable2'[$Measure0] )\r\nFROM '$TTable2'\r\n\tINNER JOIN '$TTable3' ON '$TTable2'[DimGeography$GeographyKey]='$TTable3'[DimGeography$GeographyKey]\r\nREDUCED BY\r\n'$TTable2' := SELECT\r\n'DimGeography'[GeographyKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey]\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States' VAND\r\n\t'DimGeography'[GeographyKey] ININDEX '$TTable4'[$SemijoinProjection];\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nDEFINE TABLE '$TTable1' := SELECT\r\n'$TTable3'[DimGeography$City],\r\nSUM ( '$TTable2'[$Measure0] )\r\nFROM '$TTable2'\r\n\tINNER JOIN '$TTable3' ON '$TTable2'[DimGeography$GeographyKey]='$TTable3'[DimGeography$GeographyKey]\r\nREDUCED BY\r\n'$TTable2' := SELECT\r\n'DimGeography'[GeographyKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey]\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States' VAND\r\n\t'DimGeography'[GeographyKey] ININDEX '$TTable4'[$SemijoinProjection];\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 112, 1344'\r\n",
+      "Duration": 4,
+      "CpuTime": 0,
+      "RowNumber": 8,
+      "EstimatedRows": 112,
+      "EstimatedKBytes": 2,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nDEFINE TABLE '$TTable1' := SELECT\r\n'$TTable3'[DimGeography$City],\r\nSUM ( '$TTable2'[$Measure0] )\r\nFROM '$TTable2'\r\n\tINNER JOIN '$TTable3' ON '$TTable2'[DimGeography$GeographyKey]='$TTable3'[DimGeography$GeographyKey]\r\nREDUCED BY\r\n'$TTable2' := SELECT\r\n'DimGeography'[GeographyKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey]\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States' VAND\r\n\t'DimGeography'[GeographyKey] ININDEX '$TTable4'[$SemijoinProjection];\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 112, 1344'\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 295,
+      "Query": "DEFINE TABLE '$TTable3' := SELECT\r\n'DimGeography'[GeographyKey], 'DimGeography'[City]\r\nFROM 'DimGeography'\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States',\r\nDEFINE TABLE '$TTable4' := SELECT\r\nSIMPLEINDEXN ( '$TTable3'[DimGeography$GeographyKey] )\r\nFROM '$TTable3',\r\nCREATE SHALLOW RELATION '$TRelation1' MANYTOMANY FROM 'DimGeography'[GeographyKey] TO '$TTable3'[DimGeography$GeographyKey],\r\nDEFINE TABLE '$TTable1' := SELECT\r\n'$TTable3'[DimGeography$City],\r\nSUM ( '$TTable2'[$Measure0] )\r\nFROM '$TTable2'\r\n\tINNER JOIN '$TTable3' ON '$TTable2'[DimGeography$GeographyKey]='$TTable3'[DimGeography$GeographyKey]\r\nREDUCED BY\r\n'$TTable2' := SELECT\r\n'DimGeography'[GeographyKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey]\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States' VAND\r\n\t'DimGeography'[GeographyKey] ININDEX '$TTable4'[$SemijoinProjection];\r\n",
+      "Duration": 5,
+      "CpuTime": 0,
+      "RowNumber": 9,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "DEFINE TABLE '$TTable3' := SELECT\r\n'DimGeography'[GeographyKey], 'DimGeography'[City]\r\nFROM 'DimGeography'\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States',\r\nDEFINE TABLE '$TTable4' := SELECT\r\nSIMPLEINDEXN ( '$TTable3'[DimGeography$GeographyKey] )\r\nFROM '$TTable3',\r\nCREATE SHALLOW RELATION '$TRelation1' MANYTOMANY FROM 'DimGeography'[GeographyKey] TO '$TTable3'[DimGeography$GeographyKey],\r\nDEFINE TABLE '$TTable1' := SELECT\r\n'$TTable3'[DimGeography$City],\r\nSUM ( '$TTable2'[$Measure0] )\r\nFROM '$TTable2'\r\n\tINNER JOIN '$TTable3' ON '$TTable2'[DimGeography$GeographyKey]='$TTable3'[DimGeography$GeographyKey]\r\nREDUCED BY\r\n'$TTable2' := SELECT\r\n'DimGeography'[GeographyKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimGeography' ON 'DimCustomer'[GeographyKey]='DimGeography'[GeographyKey]\r\nWHERE\r\n\t'DimGeography'[EnglishCountryRegionName] = 'United States' VAND\r\n\t'DimGeography'[GeographyKey] ININDEX '$TTable4'[$SemijoinProjection];\r\n"
+    }
+  ],
+  "StorageEngineCpu": 0,
+  "TotalDuration": 17,
+  "StorageEngineQueryCount": 4,
+  "VertipaqCacheMatches": 0,
+  "TotalCpuDuration": 16
+}

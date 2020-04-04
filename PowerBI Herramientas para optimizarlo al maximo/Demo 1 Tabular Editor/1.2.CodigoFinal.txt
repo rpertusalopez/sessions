@@ -1,0 +1,225 @@
+foreach(var m in Selected.Measures)
+{
+    string nameMeasureYTD = m.Name + " Year To Date";
+    string nameMeasureYTDPY = m.Name + " Year To Date PY";
+    string nameMeasureYTDPYGrowth = m.Name + " Year To Date Previous Year Growth";
+    string nameMeasureYTDPYGrowthPct = m.Name + " Year To Date Previous Year Growth%";
+    
+    //YTD
+    m.Table.AddMeasure(
+    nameMeasureYTD,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESYTD('Date'[Date]))",
+    m.DisplayFolder + "\\Time Intelligence\\YTD"
+    );
+    
+    m.Table.AddMeasure(
+    nameMeasureYTDPY,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))",
+    m.DisplayFolder + "\\Time Intelligence\\YTD"
+    );
+    
+      m.Table.AddMeasure(
+    nameMeasureYTDPYGrowth,                                       
+    "[" + nameMeasureYTD + "] - [" + nameMeasureYTDPY + "]",    
+        m.DisplayFolder + "\\Time Intelligence\\YTD"
+    );
+            
+    m.Table.AddMeasure(
+    nameMeasureYTDPYGrowthPct,                                       
+    "DIVIDE([" + nameMeasureYTDPYGrowth + "],[" + nameMeasureYTDPY + "])",    
+        m.DisplayFolder + "\\Time Intelligence\\YTD"
+    );
+    
+    
+    string nameMeasurePY = m.Name + " Previous Year";
+    string nameMeasurePYGrowth = m.Name + " Previous Year Growth";
+    string nameMeasurePYGrowthPct = m.Name + " Previous Year Growth%";
+
+    // PY
+    m.Table.AddMeasure(
+        nameMeasurePY,                                       
+        "CALCULATE(" + m.DaxObjectName + ",SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",    
+        m.DisplayFolder + "\\Time Intelligence\\PY"
+    );
+    
+    m.Table.AddMeasure(
+    nameMeasurePYGrowth,                                       
+    m.DaxObjectName + " - [" + nameMeasurePY + "]",    
+    m.DisplayFolder + "\\Time Intelligence\\PY"
+    );
+            
+    m.Table.AddMeasure(
+    nameMeasurePYGrowthPct,                                       
+    "DIVIDE([" + nameMeasurePYGrowth + "],[" + nameMeasurePY + "])",    
+        m.DisplayFolder + "\\Time Intelligence\\PY"
+    );
+    
+    // PY Same WeekDay
+    string nameMeasurePYSWD = m.Name + " Previous Year Same WeekDay";
+    string nameMeasurePYSWDGrowth = m.Name + " Previous Year Same WeekDay Growth";
+    string nameMeasurePYSWDGrowthPct = m.Name + " Previous Year Same WeekDay Growth%";
+    
+    m.Table.AddMeasure(
+        nameMeasurePYSWD,                                       
+        "CALCULATE(" + m.DaxObjectName + ",SAMEPERIODLASTYEAR('Date'[Date]),ALL('Date'))",    
+        m.DisplayFolder + "\\Time Intelligence\\PY Same WeekDay"
+    );
+    
+    m.Table.AddMeasure(
+    nameMeasurePYSWDGrowth,                                       
+    m.DaxObjectName + " - [" + nameMeasurePY + "]",    
+        m.DisplayFolder + "\\Time Intelligence\\PY Same WeekDay"
+    );
+            
+    m.Table.AddMeasure(
+    nameMeasurePYSWDGrowthPct,                                       
+    "DIVIDE([" + nameMeasurePYGrowth + "],[" + nameMeasurePY + "])",    
+    m.DisplayFolder + "\\Time Intelligence\\PY Same WeekDay"
+    );
+    
+
+
+
+    string nameMeasureMTD = m.Name + " Month To Date";
+    string nameMeasureMTDPY = m.Name + " Month To Date Previous Year";
+    string nameMeasureMTDPYGrowth = m.Name + " Month To Date Previous Year Growth";
+    string nameMeasureMTDPYGrowthPct = m.Name + " Month To Date Previous Year Growth%";
+    
+    // MTD
+    m.Table.AddMeasure(
+    nameMeasureMTD,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESMTD('Date'[Date]))",
+    m.DisplayFolder + "\\Time Intelligence\\MTD"
+    );
+    
+    m.Table.AddMeasure(
+    nameMeasureMTDPY,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESMTD(SAMEPERIODLASTYEAR('Date'[Date])))",
+    m.DisplayFolder + "\\Time Intelligence\\MTD"
+    );
+    
+      m.Table.AddMeasure(
+      nameMeasureMTDPYGrowth,                                       
+    "[" + nameMeasureMTD + "] - [" + nameMeasureMTDPY + "]",    
+    m.DisplayFolder + "\\Time Intelligence\\MTD"
+    );
+            
+    m.Table.AddMeasure(
+    nameMeasureMTDPYGrowthPct,                                       
+    "DIVIDE([" + nameMeasureMTDPYGrowth + "],[" + nameMeasureMTDPY + "])",    
+    m.DisplayFolder + "\\Time Intelligence\\MTD"
+    );
+    
+    
+    string nameMeasureQTD = m.Name + " Quarter To Date";
+    string nameMeasureQTDPY = m.Name + " Quarter To Date Previous Year";
+    string nameMeasureQTDPYGrowth = m.Name + " Quarter To Date Previous Year Growth";
+    string nameMeasureQTDPYGrowthPct = m.Name + " Quarter To Date Previous Year Growth%";
+    
+    // QTD
+    m.Table.AddMeasure(
+    nameMeasureQTD,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESQTD('Date'[Date]))",
+    m.DisplayFolder + "\\Time Intelligence\\QTD"
+    );
+    
+    m.Table.AddMeasure(
+    nameMeasureQTDPY,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESQTD(SAMEPERIODLASTYEAR('Date'[Date])))",
+    m.DisplayFolder + "\\Time Intelligence\\QTD"
+    );
+    
+      m.Table.AddMeasure(
+      nameMeasureQTDPYGrowth,                                       
+      "[" + nameMeasureQTD + "] - [" + nameMeasureQTDPY + "]",    
+    m.DisplayFolder + "\\Time Intelligence\\QTD"
+    );
+            
+    m.Table.AddMeasure(
+    nameMeasureQTDPYGrowthPct,                                       
+    "DIVIDE([" + nameMeasureQTDPYGrowth + "],[" + nameMeasureQTDPY + "])",    
+    m.DisplayFolder + "\\Time Intelligence\\QTD"
+    );
+    
+     string nameMeasure12MAT = m.Name + " 12 MAT";
+     string nameMeasure12MATPY = m.Name + " 12 MAT Previous Year";
+    string nameMeasure12MATPYGrowth = m.Name + " 12 MAT Previous Year Growth";
+    string nameMeasure12MATPYGrowthPct = m.Name + " 12 MAT Previous Year Growth%";
+    
+    // 12MAT
+    m.Table.AddMeasure(
+    nameMeasure12MAT,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESINPERIOD('Date'[Date],LASTDATE('Date'[Date]), -1,YEAR) , ALL ('Date'))",
+    m.DisplayFolder + "\\Time Intelligence\\12MAT"
+    );
+    
+    m.Table.AddMeasure(
+    nameMeasure12MATPY,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESINPERIOD('Date'[Date],DATEADD (LASTDATE( 'Date'[Date]),-1, YEAR), -1,YEAR) , ALL ('Date'))",
+    m.DisplayFolder + "\\Time Intelligence\\12MAT"
+    );
+    
+      m.Table.AddMeasure(
+      nameMeasure12MATPYGrowth,                                       
+      "[" + nameMeasureQTD + "] - [" + nameMeasure12MATPY + "]",    
+    m.DisplayFolder + "\\Time Intelligence\\12MAT"
+    );
+            
+    m.Table.AddMeasure(
+    nameMeasure12MATPYGrowthPct,                                       
+    "DIVIDE([" + nameMeasure12MATPYGrowth + "],[" + nameMeasure12MATPY + "])",    
+    m.DisplayFolder + "\\Time Intelligence\\12MAT"
+    );
+    
+    string nameMeasureL4W = m.Name + " Last 4 Weeks";
+     string nameMeasureL4WPY = m.Name + " Last 4 Weeks Previous Year";
+    string nameMeasureL4WPYGrowth = m.Name + " Last 4 Weeks Previous Year Growth";
+    string nameMeasureL4WPYGrowthPct = m.Name + " Last 4 Weeks Previous Year Growth%";
+    
+    // L4W
+    m.Table.AddMeasure(
+    nameMeasureL4W,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESINPERIOD('Date'[Date], LASTDATE('Date'[Date]), -28, DAY))",
+    m.DisplayFolder + "\\Time Intelligence\\L4W"
+    );
+    
+    m.Table.AddMeasure(
+    nameMeasureL4WPY,
+    "CALCULATE(\n"+
+    m.DaxObjectName+
+    ",DATESINPERIOD('Date'[Date], DATEADD(LASTDATE('Date'[Date]), -364, DAY), -28, DAY))",
+    m.DisplayFolder + "\\Time Intelligence\\L4W"
+    );
+    
+      m.Table.AddMeasure(
+      nameMeasureL4WPYGrowth,                                       
+      "[" + nameMeasureQTD + "] - [" + nameMeasureL4WPY + "]",    
+    m.DisplayFolder + "\\Time Intelligence\\L4W"
+    );
+            
+    m.Table.AddMeasure(
+    nameMeasureL4WPYGrowthPct,                                       
+    "DIVIDE([" + nameMeasure12MATPYGrowth + "],[" + nameMeasureL4WPY + "])",    
+    m.DisplayFolder + "\\Time Intelligence\\L4W"
+    );
+    
+}
+

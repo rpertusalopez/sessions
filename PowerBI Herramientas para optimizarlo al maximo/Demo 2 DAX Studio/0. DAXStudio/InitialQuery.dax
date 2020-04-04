@@ -1,0 +1,22 @@
+﻿DEFINE 
+
+---- MODEL MEASURES BEGIN ----
+MEASURE 'Internet Sales'[Internet Total Units Year To Date PY] = CALCULATE(
+[Internet Total Units],DATESYTD(SAMEPERIODLASTYEAR('Date'[Date])))
+
+MEASURE 'Internet Sales'[Internet Total Units YTD PY% (Ineficiente)] = 
+[Internet Total Units Year To Date]/[Internet Total Units Year To Date PY]
+---- MODEL MEASURES END ----
+
+MEASURE 'Internet Sales'[Internet Total Units Year To Date] = CALCULATE(
+[Internet Total Units],DATESYTD('Date'[Date]))
+
+
+EVALUATE
+SUMMARIZECOLUMNS(
+'Date'[Date],
+"Total Units",[Internet Total Units],
+"Total Units YTD",[Internet Total Units Year To Date],
+"Total Units YTD PY", [Internet Total Units Year To Date PY],
+"Total Units YTD PY%", [Internet Total Units YTD PY% (Ineficiente)]
+)

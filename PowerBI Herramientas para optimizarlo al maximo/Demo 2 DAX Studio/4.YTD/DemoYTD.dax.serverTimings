@@ -1,0 +1,86 @@
+{
+  "FileFormatVersion": 1,
+  "StorageEngineDuration": 0,
+  "StorageEngineDurationPercentage": 0.0,
+  "FormulaEngineDuration": 47,
+  "FormulaEngineDurationPercentage": 0.0,
+  "StoreageEngineEvents": [
+    {
+      "Class": 85,
+      "Subclass": 199,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n",
+      "Duration": null,
+      "CpuTime": null,
+      "RowNumber": 1,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 195, 1560'\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 2,
+      "EstimatedRows": 195,
+      "EstimatedKBytes": 2,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 195, 1560'\r\n"
+    },
+    {
+      "Class": 85,
+      "Subclass": 199,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey], 'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n",
+      "Duration": null,
+      "CpuTime": null,
+      "RowNumber": 3,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey], 'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey], 'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 3652, 14608'\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 4,
+      "EstimatedRows": 3652,
+      "EstimatedKBytes": 15,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey], 'DimDate'[MonthNumberOfYear], 'DimDate'[CalendarYear]\r\nFROM 'DimDate';\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 3652, 14608'\r\n"
+    },
+    {
+      "Class": 85,
+      "Subclass": 199,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDateKey]='DimDate'[DateKey]\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimDate'[FullDateAlternateKey] IN ( 39307.000000, 40264.000000, 40305.000000, 41262.000000, 41303.000000, 39225.000000, 39266.000000, 40223.000000, 41221.000000, 39143.000000..[3652 total values, not all displayed] ) VAND\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] IN ( 'NA', 'Silver', 'Blue', 'Multi' ) ;\r\n",
+      "Duration": null,
+      "CpuTime": null,
+      "RowNumber": 5,
+      "EstimatedRows": null,
+      "EstimatedKBytes": null,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDateKey]='DimDate'[DateKey]\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimDate'[FullDateAlternateKey] IN ( 39307.000000, 40264.000000, 40305.000000, 41262.000000, 41303.000000, 39225.000000, 39266.000000, 40223.000000, 41221.000000, 39143.000000..[3652 total values, not all displayed] ) VAND\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] IN ( 'NA', 'Silver', 'Blue', 'Multi' ) ;\r\n"
+    },
+    {
+      "Class": 83,
+      "Subclass": 176,
+      "Query": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDateKey]='DimDate'[DateKey]\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimDate'[FullDateAlternateKey] IN ( 39307.000000, 40264.000000, 40305.000000, 41262.000000, 41303.000000, 39225.000000, 39266.000000, 40223.000000, 41221.000000, 39143.000000..[3652 total values, not all displayed] ) VAND\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] IN ( 'NA', 'Silver', 'Blue', 'Multi' ) ;\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 3655, 58480'\r\n",
+      "Duration": 0,
+      "CpuTime": 0,
+      "RowNumber": 6,
+      "EstimatedRows": 3655,
+      "EstimatedKBytes": 58,
+      "HighlightQuery": false,
+      "QueryRichText": "SET DC_KIND=\"AUTO\";\r\nSELECT\r\n'DimDate'[FullDateAlternateKey],\r\nSUM ( 'FactInternetSales'[SalesAmount] )\r\nFROM 'FactInternetSales'\r\n\tLEFT OUTER JOIN 'DimDate' ON 'FactInternetSales'[OrderDateKey]='DimDate'[DateKey]\r\n\tLEFT OUTER JOIN 'DimCustomer' ON 'FactInternetSales'[CustomerKey]='DimCustomer'[CustomerKey]\r\n\tLEFT OUTER JOIN 'DimProduct' ON 'FactInternetSales'[ProductKey]='DimProduct'[ProductKey]\r\nWHERE\r\n\t'DimDate'[FullDateAlternateKey] IN ( 39307.000000, 40264.000000, 40305.000000, 41262.000000, 41303.000000, 39225.000000, 39266.000000, 40223.000000, 41221.000000, 39143.000000..[3652 total values, not all displayed] ) VAND\r\n\t'DimCustomer'[Gender] = 'M' VAND\r\n\t'DimProduct'[Color] IN ( 'NA', 'Silver', 'Blue', 'Multi' ) ;\r\n\r\n\r\n'Estimated size ( volume, marshalling bytes ) : 3655, 58480'\r\n"
+    }
+  ],
+  "StorageEngineCpu": 0,
+  "TotalDuration": 47,
+  "StorageEngineQueryCount": 3,
+  "VertipaqCacheMatches": 3,
+  "TotalCpuDuration": 47
+}
