@@ -4,9 +4,17 @@ Recopilación de mis sesiones, junto con materiales, videos y ppts. Más detalle
 
 *Todos los datos utilizados en las demostraciones son de carácter educativo. Está terminantemente prohibido el uso comercial de los mismos.*
 
+## Netcoreconf Virtual - Power BI Herramientas para optimizarlo al máximo
+[Materiales](https://github.com/rpertusalopez/sessions/tree/master/PowerBI%20Herramientas%20para%20optimizarlo%20al%20maximo)
+
+Con la presión diaria en el desarrollo de nuestras soluciones de PowerBI, las herramientas actuales como Visual Studio o PowerBI Desktop se pueden llegar a quedar cortas. Hablamos de de automatizar tareas de desarrollo de PowerBI y agilizar el análisis de rendimiento. 
+
+Durante esta sesión trabajaremos con diferentes herramientas como DAX Studio, Tabular Editor y Vertipaq Analyzer para convertirnos en unos masters de PowerBI. 
+Conocimiento que nos permitirá introducirnos en el mundo del Performance Tuning, mejorando el rendimiento de nuestras consultas DAX en PowerBI. Además, compartiremos ejemplos de casos prácticos y experiencias reales en entornos de gran volumen de datos.
+
 ## SQLSaturday Madrid 2019 - Convirtiéndonos en masters de PowerBI con DAX Studio y más. Del desarrollo al Performance Tuning.
 
-[Materiales]()
+[Materiales](https://github.com/rpertusalopez/sessions/tree/master/Convirtiendonos%20en%20maestros%20de%20PowerBI%20con%20DAX%20Studio%20y%20mas%20%20SQLSatMadrid%202019) 
 
 Con la presión de los entornos Enterprise, las herramientas actuales como Visual Studio o PowerBI Desktop, se pueden llegar a quedar cortas a la hora de automatizar tareas de desarrollo de PowerBI y agilizar el análisis de rendimiento.
 
